@@ -21,14 +21,30 @@
         </div>
 
         <div class="input-wrapper">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="exemplo@exemplo.com" />
+        </div>
+
+        <div class="input-wrapper">
           <label for="senha">Senha</label>
           <input type="password" id="senha" placeholder="Digite sua senha" />
+        </div>
+
+        <div class="input-wrapper">
+          <label for="tipoUsuario">Tipo do usuário</label>
+          <select name="tipoUsuário" id="tipoUsuario" required>
+            <option class="first" value="" hidden disabled selected>
+              Selecione
+            </option>
+            <option value="user">Administrador</option>
+            <option value="user">Funcionário</option>
+          </select>
         </div>
 
         <input class="submit" type="submit" id="entrar" value="Entrar" />
       </form>
 
-      <a href="./cadastro-login.html">Crie sua conta</a>
+      <a href="./login.html">Já tenho uma conta</a>
     </div>
   </body>
 </html>
