@@ -9,6 +9,7 @@
   font-size: 62.5%;
 
   --bg-color: #000a0f;
+  --bg-before: #001119;
 }
 
 ul {
@@ -19,4 +20,28 @@ body {
   font-size: 1.6rem;
 
   background-color: var(--bg-color);
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 10rem;
+  background-color: var(--bg-before);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  width: 100%;
+  height: 10rem;
+  background-color: var(--bg-before);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
