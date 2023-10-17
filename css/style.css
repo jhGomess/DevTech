@@ -21,6 +21,8 @@ body {
   font-size: 1.6rem;
   position: relative;
   background-color: var(--bg-color);
+
+  padding: 0rem 2.4rem;
 }
 
 /* body::before {
