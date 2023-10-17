@@ -1,17 +1,25 @@
+/*======= ROOT ===================*/
+
 :root {
+  --bg-before: #001119;
+
   --text-color: #c4c4cc;
   --bg-input: #0d1d25;
   --select-color: #7c7c8a;
   --button-color: #750310;
 }
 
+/*========== CONTAINER ==================*/
 .container {
   padding: 5rem 3.2rem;
   max-width: 42.5rem;
-  margin: 0 auto;
+  margin: 5rem auto;
   text-align: center;
+  background-color: var(--bg-before);
+  border-radius: 0.8rem;
 }
 
+/*======= LOGO ==================*/
 .logo {
   display: flex;
   align-items: center;
@@ -25,9 +33,10 @@
 
 .logo span {
   color: white;
-  font-size: 4rem;
+  font-size: 3.8rem;
 }
 
+/*=========== FORM =============*/
 form {
   display: flex;
   flex-direction: column;
@@ -84,6 +93,7 @@ form .submit:hover {
   background-color: #9b0617;
 }
 
+/* ===== LINK ===================*/
 a {
   color: white;
   text-decoration: none;
