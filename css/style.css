@@ -19,32 +19,6 @@ ul {
 
 body {
   font-size: 1.6rem;
-  position: relative;
+
   background-color: var(--bg-color);
-
-  padding: 0rem 2.4rem;
 }
-
-/* body::before {
-  content: "";
-  width: 100%;
-  height: 10rem;
-  background-color: var(--bg-before);
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-body::after {
-  content: "";
-  width: 100%;
-  height: 10rem;
-  background-color: var(--bg-before);
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-} */
