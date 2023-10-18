@@ -29,7 +29,8 @@ span {
   font-size: 18px !important;
 }
 .dropdown,
-.drop {
+.drop,
+.func {
   width: 100%;
   background: #fff;
   border-radius: 4px;
@@ -44,7 +45,8 @@ span {
   max-height: 150px;
 }
 .arrow,
-.flash {
+.arrow2,
+.arrow3 {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid #ffffff;
@@ -54,7 +56,8 @@ span {
   display: none;
 }
 .arrow.gone,
-.flash.gone {
+.arrow2.gone,
+.arrow3.gone {
   display: block;
 }
 p {
