@@ -30,7 +30,10 @@ span {
 }
 .dropdown,
 .drop,
-.func {
+.func,
+.folha,
+.rel,
+.help {
   width: 100%;
   background: #fff;
   border-radius: 4px;
@@ -46,7 +49,10 @@ span {
 }
 .arrow,
 .arrow2,
-.arrow3 {
+.arrow3,
+.arrow4,
+.arrow5,
+.arrow6 {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid #ffffff;
@@ -57,7 +63,10 @@ span {
 }
 .arrow.gone,
 .arrow2.gone,
-.arrow3.gone {
+.arrow3.gone,
+.arrow4.gone,
+.arrow5.gone,
+.arrow6.gone {
   display: block;
 }
 p {
