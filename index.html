@@ -19,13 +19,13 @@ font-family: 'Roboto', sans-serif; -->
     <title>DevTech</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="logado">
       <div class="logo">
         <img src="./assets/poligono.svg" alt="poligono DevTech" />
         <span>DevTech</span>
       </div>
 
-      <form action="./html/menu.html">
+      <form>
         <div class="input-wrapper">
           <label for="usuario">Usuário</label>
           <input type="text" id="usuario" placeholder="Digite seu usuário" />
@@ -36,9 +36,15 @@ font-family: 'Roboto', sans-serif; -->
           <input type="password" id="senha" placeholder="Digite sua senha" />
         </div>
 
-        <input class="submit" type="submit" value="Entrar" />
+        <input
+          class="submit"
+          type="submit"
+          value="Entrar"
+          onclick="logar(); return false"
+        />
       </form>
       <a href="./html/cadastro-login.html">Crie sua conta</a>
     </div>
+    <script src="./javascript/main.js"></script>
   </body>
 </html>
