@@ -14,6 +14,7 @@ nav {
   max-width: 42.5rem;
   margin: 0px auto;
   height: 100px;
+  padding: 0px 10px 0px 20px;
 
   display: flex;
   justify-content: space-between;
@@ -37,10 +38,26 @@ nav::before {
   gap: 10px;
 }
 
+.logo img {
+  width: 30px;
+}
+
+.logo span {
+  font-size: 20px;
+}
+
 .logout {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.logout span {
+  font-size: 16px;
+}
+
+.logout img {
+  width: 30px;
 }
 
 .menu {
@@ -87,10 +104,12 @@ nav::before {
   overflow: hidden;
   transition: all 0.5s;
 }
+
 .down {
   max-height: 150px;
   margin-bottom: 16px;
 }
+
 .arrow,
 .arrow2,
 .arrow3,
@@ -105,6 +124,7 @@ nav::before {
   bottom: -14px;
   display: none;
 }
+
 .arrow.gone,
 .arrow2.gone,
 .arrow3.gone,
@@ -113,11 +133,13 @@ nav::before {
 .arrow6.gone {
   display: block;
 }
+
 .menu p {
   padding: 15px 14px;
   margin: 0;
   transition: all 0.1s;
 }
+
 .menu p:hover {
   background: var(--bg-hover);
   transform: scale(1.05);
