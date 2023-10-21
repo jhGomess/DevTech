@@ -4,7 +4,7 @@ function logar() {
 
   if (usuario == "admin" && senha == "admin") {
     alert("sucesso")
-    window.location = "../html/cadastroEmpresa.html"
+    window.location.href = "./html/menu.html"
   } else {
     alert("usuario ou senha incorretos")
   }
