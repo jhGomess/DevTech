@@ -1,12 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
 /*======= ROOT ===================*/
 
 :root {
+  font-size: 62.5%;
+
+  --bg-color: #000a0f;
   --bg-before: #001119;
 
   --text-color: #c4c4cc;
   --bg-input: #0d1d25;
   --select-color: #7c7c8a;
   --button-color: #750310;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-size: 1.6rem;
+
+  background-color: var(--bg-color);
+  min-height: 100vh;
 }
 
 /*========== CONTAINER ==================*/
