@@ -59,15 +59,3 @@ function j() {
     document.getElementsByClassName("rel")[0].style.overflow = "hidden"
   }
 }
-
-function b() {
-  document.getElementsByClassName("help")[0].classList.toggle("down")
-  document.getElementsByClassName("arrow6")[0].classList.toggle("gone")
-  if (document.getElementsByClassName("help")[0].classList.contains("down")) {
-    setTimeout(function () {
-      document.getElementsByClassName("help")[0].style.overflow = "visible"
-    }, 500)
-  } else {
-    document.getElementsByClassName("help")[0].style.overflow = "hidden"
-  }
-}

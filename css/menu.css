@@ -13,6 +13,17 @@ body * {
   font-family: "Poppins", sans-serif;
 }
 
+body::after {
+  content: "";
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg-nav);
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+}
+
 nav {
   color: white;
   max-width: 42.5rem;
@@ -68,10 +79,16 @@ nav::before {
   width: 30px;
 }
 
+main h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
 .menu {
-  padding: 24px;
+  padding: 0rem 2.4rem;
   max-width: 42.5rem;
-  margin: 50px auto 0px;
+  margin: 2.4rem auto 0rem;
 }
 
 .option {
