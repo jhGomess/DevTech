@@ -25,4 +25,41 @@ form.addEventListener("submit", (event) => {
     alert("por favor, preencha seu nome")
     return
   }
+
+  if (emailinput.value === "" || !isEmailvalid(email.value)) {
+    alert("por favor, preencha seu email")
+    return
+  }
+
+  if (!validatePassword(senhainput.value)) {
+    alert("A senha precisa ser no mínimo 6 digitos")
+    return
+  }
+
+  if (tipousarioSelect.value === "") {
+    alert("Por favor, preencha seu tipo de usuario")
+    return
+  }
+
+  // se todos os campos estiverem preechidos, envie o form
+  form.submit()
 })
+
+function isEmailvalid(email) {
+  // cria uma regex para validar o email
+  const emailRegex = new RexExp(
+    /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
+  )
+
+  if (emailRegex.test(email)) {
+    return true
+  }
+  return false
+}
+
+function validatePassword(senhainput, minDigits) {
+  if (senhainput.length >= minDigits) {
+    return true
+  }
+  return false
+}
