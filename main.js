@@ -10,11 +10,11 @@ function logar() {
   }
 }
 
-const form = document.querySelector("#form")
-const usuarioinput = document.querySelector("#usuario")
-const emailinput = document.querySelector("#email")
-const senhainput = document.querySelector("#senha")
-const tipousarioSelect = document.querySelector("#tipoUsuario")
+let form = document.querySelector("#form")
+let createUser = document.querySelector("#usuario")
+let email = document.querySelector("#email")
+let createPassword = document.querySelector("#senha")
+let typeUser = document.querySelector("#tipoUsuario")
 
 form.addEventListener("submit", (event) => {
   event.preventDefault()
