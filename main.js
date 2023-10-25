@@ -1,6 +1,6 @@
 function logar() {
-  var usuario = document.getElementById("usuario").value
-  var senha = document.getElementById("senha").value
+  let usuario = document.getElementById("usuario").value
+  let senha = document.getElementById("senha").value
 
   if (usuario == "admin" && senha == "admin") {
     alert("sucesso")
@@ -10,34 +10,26 @@ function logar() {
   }
 }
 
-let form = document.querySelector("#form")
-let createUser = document.querySelector("#usuario")
-let email = document.querySelector("#email")
-let createPassword = document.querySelector("#senha")
-let typeUser = document.querySelector("#tipoUsuario")
+let form = document.getElementById("form")
+let createUser = document.getElementById("user")
+let email = document.getElementById("email")
+let createPassword = document.getElementById("password")
+let typeUser = document.getElementById("typeUser")
 
 form.addEventListener("submit", (event) => {
   event.preventDefault()
-
-  //verifica de o nome esta vazio
-
-  if (usuarioinput.value === "") {
+  if (createUser.value === "") {
     alert("por favor, preencha seu nome")
     return
   }
 
-  if (emailinput.value === "" || !isEmailvalid(email.value)) {
-    alert("por favor, preencha seu email")
+  if (validatorEmail(email.value) !== true) {
+    alert("email deve possuir @ e .com")
     return
   }
 
-  if (!validatePassword(senhainput.value)) {
-    alert("A senha precisa ser no mínimo 6 digitos")
-    return
-  }
-
-  if (tipousarioSelect.value === "") {
-    alert("Por favor, preencha seu tipo de usuario")
+  if (validatorPassword(createPassword.value) !== true) {
+    alert("senha deve possuir no minimo 6 caracteres")
     return
   }
 
@@ -45,21 +37,17 @@ form.addEventListener("submit", (event) => {
   form.submit()
 })
 
-function isEmailvalid(email) {
-  // cria uma regex para validar o email
-  const emailRegex = new RexExp(
-    /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
-  )
+function validatorEmail(email) {
+  let emailPattern =
+    /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
 
-  if (emailRegex.test(email)) {
-    return true
-  }
-  return false
+  return emailPattern.test(email)
 }
 
-function validatePassword(senhainput, minDigits) {
-  if (senhainput.length >= minDigits) {
+function validatorPassword(createPassword) {
+  if (createPassword.length >= 6) {
     return true
+  } else {
+    return false
   }
-  return false
 }
