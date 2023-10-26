@@ -15,57 +15,59 @@
     <title>DevTech</title>
   </head>
   <body>
-    <div class="container">
-      <div class="logo">
-        <img src="../assets/poligono.svg" alt="poligono DevTech" />
-        <span>DevTech</span>
+    <div class="center">
+      <div class="container">
+        <div class="logo">
+          <img src="../assets/poligono.svg" alt="poligono DevTech" />
+          <span>DevTech</span>
+        </div>
+
+        <form id="form">
+          <div class="input-wrapper">
+            <label for="user">Usuário</label>
+            <input
+              type="text"
+              id="user"
+              placeholder="Digite seu usuário"
+              required
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="exemplo@exemplo.com"
+              required
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Senha com no minimo 6 caracteres"
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="typeUser">Tipo do usuário</label>
+            <select name="tipoUsuário" id="typeUser" required>
+              <option class="first" value="" hidden disabled selected>
+                Selecione
+              </option>
+              <option value="adm">Administrador</option>
+              <option value="func">Funcionário</option>
+            </select>
+          </div>
+
+          <input class="submit" type="submit" id="created" value="Criar" />
+        </form>
+
+        <a href="../index.html">Já tenho uma conta</a>
       </div>
-
-      <form id="form">
-        <div class="input-wrapper">
-          <label for="user">Usuário</label>
-          <input
-            type="text"
-            id="user"
-            placeholder="Digite seu usuário"
-            required
-          />
-        </div>
-
-        <div class="input-wrapper">
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="exemplo@exemplo.com"
-            required
-          />
-        </div>
-
-        <div class="input-wrapper">
-          <label for="password">Senha</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Senha com no minimo 6 caracteres"
-          />
-        </div>
-
-        <div class="input-wrapper">
-          <label for="typeUser">Tipo do usuário</label>
-          <select name="tipoUsuário" id="typeUser" required>
-            <option class="first" value="" hidden disabled selected>
-              Selecione
-            </option>
-            <option value="adm">Administrador</option>
-            <option value="func">Funcionário</option>
-          </select>
-        </div>
-
-        <input class="submit" type="submit" id="created" value="Criar" />
-      </form>
-
-      <a href="../index.html">Já tenho uma conta</a>
     </div>
     <script src="../main.js"></script>
   </body>

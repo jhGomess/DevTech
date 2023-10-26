@@ -15,31 +15,33 @@
     <title>DevTech</title>
   </head>
   <body>
-    <div class="container" id="logado">
-      <div class="logo">
-        <img src="./assets/poligono.svg" alt="poligono DevTech" />
-        <span>DevTech</span>
+    <div class="center">
+      <div class="container" id="logado">
+        <div class="logo">
+          <img src="./assets/poligono.svg" alt="poligono DevTech" />
+          <span>DevTech</span>
+        </div>
+
+        <form>
+          <div class="input-wrapper">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" placeholder="Digite seu usuário" />
+          </div>
+
+          <div class="input-wrapper">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" />
+          </div>
+
+          <input
+            class="submit"
+            type="submit"
+            value="Entrar"
+            onclick="logar(); return false"
+          />
+        </form>
+        <a href="./html/cadastro-login.html">Crie sua conta</a>
       </div>
-
-      <form>
-        <div class="input-wrapper">
-          <label for="usuario">Usuário</label>
-          <input type="text" id="usuario" placeholder="Digite seu usuário" />
-        </div>
-
-        <div class="input-wrapper">
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" placeholder="Digite sua senha" />
-        </div>
-
-        <input
-          class="submit"
-          type="submit"
-          value="Entrar"
-          onclick="logar(); return false"
-        />
-      </form>
-      <a href="./html/cadastro-login.html">Crie sua conta</a>
     </div>
     <script src="./main.js"></script>
   </body>
