@@ -31,7 +31,7 @@ body {
 }
 
 body * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 nav {
@@ -69,7 +69,7 @@ nav::before {
 
 .logo span {
   font-size: 20px;
-  font-family: "Roboto", sans-serif;
+
   font-weight: 700;
 }
 
@@ -81,7 +81,7 @@ nav::before {
 
 .logout span {
   font-size: 16px;
-  font-family: "Roboto", sans-serif;
+
   font-weight: 700;
 }
 

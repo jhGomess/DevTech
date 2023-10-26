@@ -30,6 +30,10 @@ body {
   min-height: 100vh;
 }
 
+body * {
+  font-family: "Quicksand", sans-serif;
+}
+
 /*========== CONTAINER ==================*/
 .container {
   padding: 5rem 2.4rem;
