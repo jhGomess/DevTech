@@ -86,7 +86,8 @@ nav::before {
 }
 
 .logout img {
-  width: 30px;
+  width: 24px;
+  display: flex;
 }
 
 main h1 {
@@ -291,4 +292,8 @@ footer {
   position: absolute;
   bottom: 0;
   z-index: -1;
+}
+
+a:hover {
+  transform: scale(1.1);
 }
