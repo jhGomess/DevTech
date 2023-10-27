@@ -94,16 +94,36 @@ nav::before {
 }
 
 .logout img {
-  width: 30px;
+  width: 24px;
+  display: flex;
+}
+
+.logout a:hover {
+  transform: scale(1.1);
 }
 
 main {
   padding: 0rem 2.4rem;
   width: 42.5rem;
-  text-align: center;
 
   border-radius: 0.8rem;
-  margin: 2.4rem auto;
+  margin: 3.6rem auto;
+}
+
+main a {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: -5px;
+}
+
+main a:hover {
+  transform: scale(1.03);
+  color: white;
 }
 
 form {
@@ -111,7 +131,7 @@ form {
   flex-direction: column;
   gap: 3.2rem;
 
-  margin: 5rem 0rem 3.2rem;
+  margin: 2.4rem 0rem 7rem;
 
   text-align: left;
 }
@@ -182,4 +202,10 @@ form .submit {
 
 form .submit:hover {
   background-color: var(--submit-hover-color);
+}
+
+footer {
+  width: 100%;
+  height: 10rem;
+  background: var(--bg-nav);
 }
