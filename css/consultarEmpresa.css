@@ -197,13 +197,45 @@ form .submit {
 
   transition: background-color 200ms;
 
-  margin-top: 3rem;
-
-  cursor: pointer;
+  margin-top: 1.2rem;
 }
 
 form .submit:hover {
   background-color: var(--submit-hover-color);
+}
+
+form .alt-exc {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 3rem;
+}
+
+form button {
+  padding: 1.2rem 5rem;
+  border: none;
+  border-radius: 0.8rem;
+  color: white;
+
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.yellow {
+  background-color: #a8a610;
+}
+
+.yellow:hover {
+  background-color: #c9c612;
+}
+
+.red {
+  background-color: #761f1f;
+}
+
+.red:hover {
+  background-color: #9b1b1b;
 }
 
 footer {
