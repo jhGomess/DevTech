@@ -11,6 +11,14 @@
   --bg-color: #000a0f;
   --bg-nav: #001722;
   --bg-hover: #002f44;
+
+  --bg-before: #001119;
+
+  --text-color: #c4c4cc;
+  --bg-input: #0d1d25;
+  --select-color: #7c7c8a;
+  --submit-color: #154d25;
+  --submit-hover-color: #227439;
 }
 
 a {
@@ -28,6 +36,10 @@ body {
 
   position: relative;
   min-height: 100vh;
+}
+
+body * {
+  font-family: "Quicksand", sans-serif;
 }
 
 nav {
@@ -83,4 +95,91 @@ nav::before {
 
 .logout img {
   width: 30px;
+}
+
+main {
+  padding: 0rem 2.4rem;
+  width: 42.5rem;
+  text-align: center;
+
+  border-radius: 0.8rem;
+  margin: 2.4rem auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  margin: 5rem 0rem 3.2rem;
+
+  text-align: left;
+}
+
+form fieldset {
+  border: none;
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+form fieldset legend {
+  padding-bottom: 3rem;
+
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.col-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-wrapper label {
+  color: var(--text-color);
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  background-color: var(--bg-input);
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.4rem;
+  color: var(--text-color);
+}
+
+.input-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 1.6rem top 50%;
+}
+
+form .submit {
+  width: 100%;
+  padding: 12px 32px;
+  background-color: var(--submit-color);
+  border: none;
+  border-radius: 0.8rem;
+
+  color: white;
+
+  transition: background-color 200ms;
+
+  margin-top: 1.2rem;
+}
+
+form .submit:hover {
+  background-color: var(--submit-hover-color);
 }
