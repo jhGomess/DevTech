@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: #000a0f;
+  --bg-nav: #001722;
+  --bg-hover: #002f44;
+
+  --bg-before: #001119;
+
+  --text-color: #c4c4cc;
+  --bg-input: #0d1d25;
+  --select-color: #7c7c8a;
+  --submit-color: #154d25;
+  --submit-hover-color: #227439;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-size: 1.6rem;
+
+  background-color: var(--bg-color);
+
+  position: relative;
+  min-height: 100vh;
+}
+
+body * {
+  font-family: "Quicksand", sans-serif;
+}
+
+nav {
+  color: white;
+  max-width: 42.5rem;
+  margin: 0px auto;
+  height: 100px;
+  padding: 0px 10px 0px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav::before {
+  content: "";
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg-nav);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 30px;
+}
+
+.logo span {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout span {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.logout img {
+  width: 24px;
+  display: flex;
+}
+
+.logout a:hover {
+  transform: scale(1.1);
+}
+
+main {
+  padding: 0rem 2.4rem;
+  width: 42.5rem;
+
+  border-radius: 0.8rem;
+  margin: 3.6rem auto;
+}
+
+main a {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: -5px;
+}
+
+main a:hover {
+  transform: scale(1.03);
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  margin: 2.4rem 0rem 7rem;
+
+  text-align: left;
+}
+
+form fieldset {
+  border: none;
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+form fieldset legend {
+  padding-bottom: 3rem;
+
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.col-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-wrapper label {
+  color: var(--text-color);
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  background-color: var(--bg-input);
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.4rem;
+  color: var(--text-color);
+}
+
+textarea {
+  height: 20rem;
+}
+
+form .submit {
+  width: 100%;
+  padding: 12px 32px;
+  background-color: var(--submit-color);
+  border: none;
+  border-radius: 0.8rem;
+
+  color: white;
+
+  transition: background-color 200ms;
+
+  margin-top: 3rem;
+
+  cursor: pointer;
+}
+
+form .submit:hover {
+  background-color: var(--submit-hover-color);
+}
+
+footer {
+  width: 100%;
+  height: 10rem;
+  background: var(--bg-nav);
+}
