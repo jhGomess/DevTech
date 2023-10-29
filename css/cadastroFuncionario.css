@@ -177,7 +177,7 @@ form fieldset legend {
   border-radius: 0.8rem;
   color: var(--text-color);
 
-  padding: 1.2rem 2.4rem;
+  padding: 1.2rem 2rem;
 
   line-height: 2.6rem;
 
@@ -187,7 +187,7 @@ form fieldset legend {
 .col-2 {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 form .submit {
@@ -201,7 +201,7 @@ form .submit {
 
   transition: background-color 200ms;
 
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   cursor: pointer;
 }

@@ -15,77 +15,89 @@
     <title>DevTech</title>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <img src="../assets/poligono.svg" alt="poligono DevTech" />
-        <span>DevTech</span>
-      </div>
-      <div class="logout">
-        <span>administrador</span>
-        <a href="../index.html">
-          <img src="../assets/logout.svg" alt="" />
-        </a>
-      </div>
-    </nav>
-    <main>
-      <a href="./menu.html"><img src="../assets/voltar.svg" alt="" /> Voltar</a>
-      <form>
-        <fieldset>
-          <legend>Cadastrar Empresa</legend>
+    <div class="page">
+      <nav>
+        <div class="logo">
+          <img src="../assets/poligono.svg" alt="poligono DevTech" />
+          <span>DevTech</span>
+        </div>
+        <div class="logout">
+          <span>administrador</span>
+          <a href="../index.html">
+            <img src="../assets/logout.svg" alt="" />
+          </a>
+        </div>
+      </nav>
+      <main>
+        <a href="./menu.html"
+          ><img src="../assets/voltar.svg" alt="" /> Voltar</a
+        >
+        <form>
+          <fieldset>
+            <legend>Cadastrar Empresa</legend>
 
-          <div class="input-wrapper">
-            <label for="nameCompany">Nome da Empresa</label>
-            <input type="text" id="nameCompany" placeholder="Ex: UNIP" />
-          </div>
-
-          <div class="input-wrapper">
-            <label for="cnpj">CNPJ</label>
-            <input type="text" id="cnpj" placeholder="xx.xxx.xxx/0001-xx" />
-          </div>
-
-          <div class="col-2">
             <div class="input-wrapper">
-              <label for="id">id</label>
-              <input type="number" id="id" placeholder="xxx" />
+              <label for="nameCompany">Nome da Empresa</label>
+              <input type="text" id="nameCompany" placeholder="Ex: UNIP" />
             </div>
 
             <div class="input-wrapper">
-              <label for="phone">Telefone</label>
-              <input type="number" id="phone" placeholder="(xx) x xxxx-xxxx" />
+              <label for="cnpj">CNPJ</label>
+              <input type="text" id="cnpj" placeholder="xx.xxx.xxx/0001-xx" />
             </div>
-          </div>
 
-          <div class="input-wrapper">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="exemplo@exemplo.com" />
-          </div>
+            <div class="col-2">
+              <div class="input-wrapper">
+                <label for="id">id</label>
+                <input type="number" id="id" placeholder="xxx" />
+              </div>
 
-          <div class="input-wrapper">
-            <label for="address">Endereço</label>
-            <input type="text" id="address" placeholder="rua exemplo, 000" />
-          </div>
+              <div class="input-wrapper">
+                <label for="phone">Telefone</label>
+                <input
+                  type="number"
+                  id="phone"
+                  placeholder="(xx) x xxxx-xxxx"
+                />
+              </div>
+            </div>
 
-          <div class="col-2">
             <div class="input-wrapper">
-              <label for="city">Cidade</label>
-              <input type="text" id="city" placeholder="Ex: São Paulo" />
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="exemplo@exemplo.com"
+              />
             </div>
 
             <div class="input-wrapper">
-              <label for="state">Estado</label>
-              <input type="text" id="state" placeholder="Ex: SP" />
+              <label for="address">Endereço</label>
+              <input type="text" id="address" placeholder="rua exemplo, 000" />
             </div>
-          </div>
 
-          <input
-            class="submit"
-            type="submit"
-            value="Cadastrar"
-            onclick="logar(); return false"
-          />
-        </fieldset>
-      </form>
-    </main>
+            <div class="col-2">
+              <div class="input-wrapper">
+                <label for="city">Cidade</label>
+                <input type="text" id="city" placeholder="Ex: São Paulo" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="state">Estado</label>
+                <input type="text" id="state" placeholder="Ex: SP" />
+              </div>
+            </div>
+
+            <input
+              class="submit"
+              type="submit"
+              value="Cadastrar"
+              onclick="logar(); return false"
+            />
+          </fieldset>
+        </form>
+      </main>
+    </div>
     <footer></footer>
   </body>
 </html>

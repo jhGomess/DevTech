@@ -34,7 +34,6 @@ body {
 
   background-color: var(--bg-color);
 
-  position: relative;
   min-height: 100vh;
 }
 
@@ -42,19 +41,7 @@ body * {
   font-family: "Quicksand", sans-serif;
 }
 
-nav {
-  color: white;
-  max-width: 42.5rem;
-  margin: 0px auto;
-  height: 100px;
-  padding: 0px 10px 0px 20px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav::before {
+body::before {
   content: "";
   width: 100%;
   height: 100px;
@@ -63,6 +50,21 @@ nav::before {
   z-index: -1;
   top: 0;
   left: 0;
+}
+
+.page {
+  max-width: 42.5rem;
+  margin: 0px auto;
+  padding: 0rem 1.6rem;
+}
+
+nav {
+  color: white;
+  height: 10rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -103,10 +105,6 @@ nav::before {
 }
 
 main {
-  padding: 0rem 2.4rem;
-  width: 42.5rem;
-
-  border-radius: 0.8rem;
   margin: 3.6rem auto;
 }
 
@@ -127,13 +125,8 @@ main a:hover {
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-
-  margin: 2.4rem 0rem 7rem;
-
-  text-align: left;
+  margin: 3rem 0rem 7rem;
+  max-width: 42.5rem;
 }
 
 form fieldset {
@@ -142,26 +135,25 @@ form fieldset {
 
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
+  gap: 2.4rem;
 }
 
 form fieldset legend {
-  padding-bottom: 3rem;
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
 
   font-size: 2.4rem;
   font-weight: 700;
+  width: 100%;
+  border-bottom: 1px solid var(--select-color);
 }
 
 .input-wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-}
 
-.col-2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
 }
 
 .input-wrapper label {
@@ -173,12 +165,23 @@ form fieldset legend {
   background-color: var(--bg-input);
   border: none;
   border-radius: 0.8rem;
-  padding: 1.2rem 1.4rem;
+  padding: 1.2rem 2rem;
   color: var(--text-color);
+
+  line-height: 2.6rem;
+
+  width: 100%;
 }
 
-textarea {
+.input-wrapper textarea {
+  padding: 0.8rem 1rem;
   height: 20rem;
+}
+
+.col-2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 form .submit {
@@ -192,7 +195,7 @@ form .submit {
 
   transition: background-color 200ms;
 
-  margin-top: 3rem;
+  margin-top: 4rem;
 
   cursor: pointer;
 }
