@@ -44,7 +44,7 @@ body * {
 body::before {
   content: "";
   width: 100%;
-  height: 10rem;
+  height: 100px;
   background-color: var(--bg-nav);
   position: absolute;
   z-index: -1;
@@ -125,9 +125,14 @@ main a:hover {
 }
 
 form {
-  margin: 3rem 0rem 7rem;
+  margin: 3rem 0rem 0rem;
 
   max-width: 42.5rem;
+}
+
+.border {
+  border: 1px solid var(--text-color);
+  padding: 2.4rem 1.2rem 4rem;
 }
 
 form fieldset {
@@ -183,7 +188,8 @@ form fieldset legend {
   width: 100%;
 }
 
-.col-2 {
+.col-2,
+.col-date {
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -200,7 +206,7 @@ form .submit {
 
   transition: background-color 200ms;
 
-  margin: 0rem 0rem 3rem;
+  margin: 2rem 0rem 2rem;
 
   cursor: pointer;
 }
@@ -237,16 +243,48 @@ form button {
   background-color: #c9c612;
 }
 
-.red {
-  background-color: #761f1f;
+.green {
+  background-color: var(--submit-color);
 }
 
-.red:hover {
-  background-color: #9b1b1b;
+.green:hover {
+  background-color: var(--submit-hover-color);
+}
+
+.encerrarFolha {
+  width: 100%;
+  padding: 2rem 1.2rem;
+  background-color: rgb(252, 168, 168);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid red;
+  border-radius: 0rem 0rem 0.4rem 0.4rem;
+
+  color: #e21717;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+
+  transition: background 300ms, color 300ms, border 300ms;
+}
+
+.encerrarFolha:hover {
+  border: 1.5px solid green;
+  background-color: rgb(151, 253, 138);
+  color: green;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 footer {
   width: 100%;
   height: 10rem;
   background: var(--bg-nav);
+}
+
+@media (max-width: 374px) {
+  .col-date {
+    flex-direction: column;
+    max-width: 60%;
+  }
 }
