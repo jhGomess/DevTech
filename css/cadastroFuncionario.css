@@ -15,7 +15,7 @@
   --bg-before: #001119;
 
   --text-color: #c4c4cc;
-  --bg-input: #0d161b;
+  --bg-input: #0d1d25;
   --select-color: #7c7c8a;
   --submit-color: #154d25;
   --submit-hover-color: #227439;
@@ -34,10 +34,7 @@ body {
 
   background-color: var(--bg-color);
 
-  position: relative;
   min-height: 100vh;
-
-  padding: 0rem 2.4rem;
 }
 
 body * {
@@ -58,11 +55,11 @@ body::before {
 .page {
   max-width: 42.5rem;
   margin: 0px auto;
+  padding: 0rem 1.6rem;
 }
 
 nav {
   color: white;
-
   height: 10rem;
   display: flex;
   justify-content: space-between;
@@ -107,7 +104,7 @@ nav {
 }
 
 main {
-  margin: 7rem auto;
+  margin: 3.6rem 0rem;
 }
 
 main a {
@@ -131,58 +128,66 @@ form {
   flex-direction: column;
   gap: 5rem;
 
-  margin: 2.4rem 0rem 7rem;
-
-  text-align: left;
+  max-width: 42.5rem;
+  margin: 3rem 0rem 7rem;
 }
 
-form fieldset {
+form h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: -1rem;
+}
+
+fieldset {
   border: none;
+}
+
+form fieldset .fieldset-wrapper {
   color: var(--text-color);
 
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
+  gap: 2.4rem;
 }
 
 form fieldset legend {
-  padding-bottom: 3rem;
-  font-size: 2.4rem;
-  font-weight: 700;
+  padding-bottom: 1.6rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  width: 100%;
+  border-bottom: 1px solid var(--select-color);
 }
 
 .input-wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-}
 
-.col-2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
 }
 
 .input-wrapper label {
   color: var(--text-color);
 }
 
-.input-wrapper input,
-.input-wrapper select {
+.input-wrapper input {
   background-color: var(--bg-input);
   border: none;
   border-radius: 0.8rem;
-  padding: 1.2rem 1.4rem;
   color: var(--text-color);
+
+  padding: 1.2rem 2.4rem;
+
+  line-height: 2.6rem;
+
+  width: 100%;
 }
 
-.input-wrapper select {
-  appearance: none;
-  -webkit-appearance: none;
-
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
-  background-position: right 1.6rem top 50%;
+.col-2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 form .submit {
@@ -196,7 +201,7 @@ form .submit {
 
   transition: background-color 200ms;
 
-  margin-top: 3rem;
+  margin-top: 5rem;
 
   cursor: pointer;
 }
