@@ -15,93 +15,105 @@
     <title>DevTech</title>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <img src="../assets/poligono.svg" alt="poligono DevTech" />
-        <span>DevTech</span>
-      </div>
-      <div class="logout">
-        <span>administrador</span>
-        <a href="../index.html">
-          <img src="../assets/logout.svg" alt="" />
-        </a>
-      </div>
-    </nav>
-    <main>
-      <a href="./menu.html"><img src="../assets/voltar.svg" alt="" /> Voltar</a>
-      <form>
-        <fieldset>
-          <legend>Consultar Departamento</legend>
-          <div class="input-wrapper">
-            <img
-              class="lupa"
-              src="../assets/search.svg"
-              alt=""
-              onclick="performSearch()"
-            />
-
-            <input
-              type="search"
-              name="searchDepartament"
-              id="searchDepartament"
-              placeholder="Busque o departamento pelo nome ou id"
-            />
-          </div>
-
-          <input
-            class="submit"
-            type="submit"
-            value="Consultar"
-            onclick="logar(); return false"
-          />
-
-          <div class="input-wrapper">
-            <label for="nameDepartment">Nome do Departamento</label>
-            <input type="text" id="nameDepartment" placeholder="Ex: TI" />
-          </div>
-
-          <div class="input-wrapper">
-            <label for="nameResponsible">Nome do Responsável</label>
-            <input
-              type="text"
-              id="nameResponsible"
-              placeholder="Ex: Jhuan Gomes"
-            />
-          </div>
-
-          <div class="col-2">
+    <div class="page">
+      <nav>
+        <div class="logo">
+          <img src="../assets/poligono.svg" alt="poligono DevTech" />
+          <span>DevTech</span>
+        </div>
+        <div class="logout">
+          <span>administrador</span>
+          <a href="../index.html">
+            <img src="../assets/logout.svg" alt="" />
+          </a>
+        </div>
+      </nav>
+      <main>
+        <a href="./menu.html"
+          ><img src="../assets/voltar.svg" alt="" /> Voltar</a
+        >
+        <form>
+          <fieldset>
+            <legend>Consultar Departamento</legend>
             <div class="input-wrapper">
-              <label for="id">id</label>
-              <input type="number" id="id" placeholder="xxx" />
+              <img
+                class="lupa"
+                src="../assets/search.svg"
+                alt=""
+                onclick="performSearch()"
+              />
+
+              <input
+                type="search"
+                name="searchDepartament"
+                id="searchDepartament"
+                placeholder="Busque o departamento pelo nome ou id"
+              />
+            </div>
+
+            <input
+              class="submit"
+              type="submit"
+              value="Consultar"
+              onclick="logar(); return false"
+            />
+
+            <div class="input-wrapper">
+              <label for="nameDepartment">Nome do Departamento</label>
+              <input type="text" id="nameDepartment" placeholder="Ex: TI" />
             </div>
 
             <div class="input-wrapper">
-              <label for="phone">Telefone</label>
-              <input type="number" id="phone" placeholder="(xx) x xxxx-xxxx" />
+              <label for="nameResponsible">Nome do Responsável</label>
+              <input
+                type="text"
+                id="nameResponsible"
+                placeholder="Ex: Jhuan Gomes"
+              />
             </div>
-          </div>
 
-          <div class="input-wrapper">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="exemplo@exemplo.com" />
-          </div>
+            <div class="col-2">
+              <div class="input-wrapper">
+                <label for="id">id</label>
+                <input type="number" id="id" placeholder="xxx" />
+              </div>
 
-          <div class="input-wrapper">
-            <label for="description">Descrição de Departamento</label>
-            <textarea
-              name="description"
-              id="description"
-              placeholder="Ex: Esse departamento é responsável por..."
-            ></textarea>
-          </div>
+              <div class="input-wrapper">
+                <label for="phone">Telefone</label>
+                <input
+                  type="number"
+                  id="phone"
+                  placeholder="(xx) x xxxx-xxxx"
+                />
+              </div>
+            </div>
 
-          <div class="alt-exc">
-            <button class="yellow">Alterar</button>
-            <button class="red">Excluir</button>
-          </div>
-        </fieldset>
-      </form>
-    </main>
+            <div class="input-wrapper">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="exemplo@exemplo.com"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="description">Descrição de Departamento</label>
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Ex: Esse departamento é responsável por..."
+              ></textarea>
+            </div>
+
+            <div class="button-2">
+              <button class="yellow">Alterar</button>
+              <button class="red">Excluir</button>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+    </div>
     <footer></footer>
 
     <script src="../javascript/consultarDepartamento.js"></script>
