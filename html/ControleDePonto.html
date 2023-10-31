@@ -50,14 +50,52 @@
               />
             </div>
 
+            <div class="input-wrapper">
+              <img
+                class="lupa"
+                src="../assets/search.svg"
+                alt=""
+                onclick="performSearch()"
+              />
+              <input
+                type="search"
+                name="searchDepartament"
+                id="searchDepartament"
+                placeholder="Busque o Funcionário pelo nome ou id"
+              />
+            </div>
+
             <input
               class="submit"
               type="submit"
-              value="Processar"
+              value="Consultar"
               onclick="logar(); return false"
-
             />
+          </fieldset>
+        </form>
+        <table>
+          <thead>
+            <tr class="titulo">
+              <th class="left">Departamento</th>
+              <th>Funcionário</th>
+              <th>Data</th>
+              <th>Entrada</th>
+              <th class="right">Saida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TI</td>
+              <td>João</td>
+              <td>05/05/2023</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+          </tbody>
+        </table>
 
+        <form class="form-2">
+          <fieldset>
             <legend>Horas Extras</legend>
             <div class="col-date">
               <div class="input-wrapper">
@@ -70,12 +108,68 @@
                 <input type="date" id="final_dt" placeholder="" />
               </div>
             </div>
-    
-        </form>
-              
-           
-  
 
+            <div class="input-wrapper">
+              <img
+                class="lupa"
+                src="../assets/search.svg"
+                alt=""
+                onclick="performSearch()"
+              />
+              <input
+                type="search"
+                name="searchDepartament"
+                id="searchDepartament"
+                placeholder="Busque o Departamento pelo nome ou id"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <img
+                class="lupa"
+                src="../assets/search.svg"
+                alt=""
+                onclick="performSearch()"
+              />
+              <input
+                type="search"
+                name="searchDepartament"
+                id="searchDepartament"
+                placeholder="Busque o Funcionário pelo nome ou id"
+              />
+            </div>
+
+            <input
+              class="submit"
+              type="submit"
+              value="Consultar"
+              onclick="logar(); return false"
+            />
+          </fieldset>
+        </form>
+        <table>
+          <thead>
+            <tr class="titulo">
+              <th class="left">Departamento</th>
+              <th>Funcionário</th>
+              <th>Data</th>
+              <th>Entrada</th>
+              <th class="right">Saida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TI</td>
+              <td>João</td>
+              <td>05/05/2023</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+    <footer></footer>
     <script src="../javascript/consultarDepartamento.js"></script>
   </body>
 </html>

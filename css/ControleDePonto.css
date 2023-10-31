@@ -55,7 +55,7 @@ body::before {
 .page {
   max-width: 42.5rem;
   margin: 0px auto;
-  padding: 0rem 1.6rem;
+  padding: 0rem 1.6rem 6rem;
 }
 
 nav {
@@ -129,15 +129,15 @@ form {
 
   max-width: 42.5rem;
 }
+
+.form-2 {
+  margin-top: 7rem;
+}
+
 .col-date {
   display: flex;
   gap: 2rem;
   align-items: center;
-}
-
-.border {
-  border: 1px solid var(--text-color);
-  padding: 2.4rem 1.2rem 4rem;
 }
 
 form fieldset {
@@ -200,18 +200,64 @@ form .submit {
   border: none;
   border-radius: 0.8rem;
 
+  font-weight: 700;
   color: white;
 
-  transition: background-color 200ms;
+  transition: background 200ms;
 
   margin: 2rem 0rem 2rem;
 
   cursor: pointer;
 }
+
+form .submit:hover {
+  background: var(--submit-hover-color);
+}
+
 .green {
   background-color: var(--submit-color);
 }
 
 .green:hover {
   background-color: var(--submit-hover-color);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  background-color: var(--bg-before);
+  color: var(--text-color);
+}
+
+th {
+  border-bottom: 2px solid var(--bg-color);
+  padding: 2rem 2rem 2rem 0.8rem;
+  background-color: var(--bg-input);
+  color: var(--text-color);
+  font-weight: 400;
+
+  text-align: left;
+}
+
+th.left {
+  border-radius: 0.8rem 0rem 0rem 0rem;
+}
+
+th.right {
+  border-radius: 0rem 0.8rem 0rem 0rem;
+}
+
+td {
+  border: 1px solid var(--select-color);
+  padding: 8px;
+  text-align: left;
+}
+
+footer {
+  width: 100%;
+  height: 10rem;
+  background: var(--bg-nav);
 }
