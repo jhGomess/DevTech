@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/emitirRelatorioAdm.css" />
+    <title>DevTech</title>
+  </head>
+  <body>
+    <div class="page">
+      <nav>
+        <div class="logo">
+          <img src="../assets/poligono.svg" alt="poligono DevTech" />
+          <span>DevTech</span>
+        </div>
+        <div class="logout">
+          <span>administrador</span>
+          <a href="../index.html">
+            <img src="../assets/logout.svg" alt="" />
+          </a>
+        </div>
+      </nav>
+
+      <main>
+        <a href="./menu.html"
+          ><img src="../assets/voltar.svg" alt="" /> Voltar</a
+        >
+        <form>
+          <fieldset class="teste">
+            <legend>Emitir Relatório</legend>
+            <div class="input-wrapper">
+              <img
+                class="lupa"
+                src="../assets/search.svg"
+                alt=""
+                onclick="performSearch()"
+              />
+
+              <input
+                type="search"
+                name="searchDepartament"
+                id="searchDepartament"
+                placeholder="Busque o departamento pelo nome ou id"
+              />
+            </div>
+            <div class="input-wrapper">
+              <img
+                class="lupa"
+                src="../assets/search.svg"
+                alt=""
+                onclick="performSearch()"
+              />
+
+              <input
+                type="search"
+                name="searchDepartament"
+                id="searchDepartament"
+                placeholder="Busque o funcionário pelo nome ou id"
+              />
+            </div>
+
+            <div class="col-date">
+              <div class="input-wrapper">
+                <label for="initial_dt">Data Inicial</label>
+                <input type="date" id="initial_dt" placeholder="" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="final_dt">Data Final</label>
+                <input type="date" id="final_dt" placeholder="" />
+              </div>
+            </div>
+
+            <input
+              class="submit"
+              type="submit"
+              value="Processar"
+              onclick="logar(); return false"
+            />
+          </fieldset>
+        </form>
+      </main>
+    </div>
+    <footer></footer>
+
+    <script src="../javascript/consultarDepartamento.js"></script>
+  </body>
+</html>
