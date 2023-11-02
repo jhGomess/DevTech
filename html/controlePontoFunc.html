@@ -1,0 +1,172 @@
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/controlePontoFunc.css" />
+    <title>DevTech</title>
+  </head>
+  <body>
+    <div class="page">
+      <nav>
+        <div class="logo">
+          <img src="../assets/poligono.svg" alt="poligono DevTech" />
+          <span>DevTech</span>
+        </div>
+        <div class="logout">
+          <span>administrador</span>
+          <a href="../index.html">
+            <img src="../assets/logout.svg" alt="" />
+          </a>
+        </div>
+      </nav>
+
+      <main>
+        <a href="./menuFunc.html"
+          ><img src="../assets/voltar.svg" alt="" /> Voltar</a
+        >
+        <form>
+          <fieldset class="teste">
+            <legend>Controle de Ponto</legend>
+
+            <input
+              class="submit"
+              type="submit"
+              value="Bater o Ponto"
+              onclick="logar(); return false"
+            />
+
+            <div class="col-date">
+              <div class="input-wrapper">
+                <label for="initial_dt">No dia</label>
+                <input type="date" id="initial_dt" placeholder="" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="final_dt">No mês</label>
+                <input type="date" id="final_dt" placeholder="" />
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <table>
+          <thead>
+            <tr class="titulo">
+              <th class="left">Departamento</th>
+              <th>Funcionário</th>
+              <th>Data</th>
+              <th>Entrada</th>
+              <th class="right">Saida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TI</td>
+              <td>João</td>
+              <td>05/05/2023</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form class="form-2">
+          <fieldset>
+            <legend>Histórico de Ponto</legend>
+            <div class="col-date">
+              <div class="input-wrapper">
+                <label for="initial_dt">Data Inicial</label>
+                <input type="date" id="initial_dt" placeholder="" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="final_dt">Data Final</label>
+                <input type="date" id="final_dt" placeholder="" />
+              </div>
+            </div>
+
+            <input
+              class="submit"
+              type="submit"
+              value="Consultar"
+              onclick="logar(); return false"
+            />
+          </fieldset>
+        </form>
+        <table>
+          <thead>
+            <tr class="titulo">
+              <th class="left">Departamento</th>
+              <th>Funcionário</th>
+              <th>Data</th>
+              <th>Entrada</th>
+              <th class="right">Saida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TI</td>
+              <td>João</td>
+              <td>05/05/2023</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form class="form-2">
+          <fieldset>
+            <legend>Horas Extras</legend>
+            <div class="col-date">
+              <div class="input-wrapper">
+                <label for="initial_dt">Data Inicial</label>
+                <input type="date" id="initial_dt" placeholder="" />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="final_dt">Data Final</label>
+                <input type="date" id="final_dt" placeholder="" />
+              </div>
+            </div>
+
+            <input
+              class="submit"
+              type="submit"
+              value="Consultar"
+              onclick="logar(); return false"
+            />
+          </fieldset>
+        </form>
+        <table>
+          <thead>
+            <tr class="titulo">
+              <th class="left">Departamento</th>
+              <th>Funcionário</th>
+              <th>Data</th>
+              <th>Entrada</th>
+              <th class="right">Saida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TI</td>
+              <td>João</td>
+              <td>05/05/2023</td>
+              <td>00:00:00</td>
+              <td>00:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+    <footer></footer>
+    <script src="../javascript/consultarDepartamento.js"></script>
+  </body>
+</html>
