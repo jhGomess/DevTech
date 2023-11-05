@@ -33,6 +33,9 @@ let validTypeUser = false
 
 let optionFirst = document.getElementById("first")
 
+let msgError = document.getElementById("msgError")
+let msgSucess = document.getElementById("msgSucess")
+
 createUser.addEventListener("keyup", () => {
   if (createUser.value.length <= 5) {
     labelCreateUser.setAttribute("style", "color: red")
@@ -96,9 +99,18 @@ function cadastrar() {
     validConfirmPassword &&
     validTypeUser
   ) {
-    alert("deu bom!")
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Cadastrando Usuário...</strong>"
+
+    msgError.setAttribute("style", "display: none")
+    msgError.innerHTML = ""
   } else {
-    alert("preencha todos os campos")
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML =
+      "<strong>Preencha todos os campos corretamente</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
   }
 }
 

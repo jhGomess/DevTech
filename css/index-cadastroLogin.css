@@ -140,3 +140,27 @@ a {
 a:hover {
   transform: scale(1.05);
 }
+
+#msgError {
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 1rem;
+  border-radius: 0.4;
+  display: none;
+
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+}
+
+#msgSucess {
+  text-align: center;
+  color: #00bb00;
+  background-color: #bbffbb;
+  padding: 1rem;
+  border-radius: 0.4;
+  display: none;
+
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+}
