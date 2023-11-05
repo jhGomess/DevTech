@@ -1,17 +1,28 @@
-// function logar() {
-//   let usuario = document.getElementById("usuario").value
-//   let senha = document.getElementById("senha").value
+let user = document.getElementById("user")
+let password = document.getElementById("password")
+let enter = document.getElementById("enter")
 
-//   if (usuario == "admin" && senha == "admin") {
-//     alert("sucesso")
-//     window.location.href = "./html/menu.html"
-//   } else if (usuario == "func" && senha == "func") {
-//     alert("sucesso")
-//     window.location.href = "./html/menuFunc.html"
-//   } else {
-//     alert("usuario ou senha incorretos")
-//   }
-// }
+function logar() {
+  if (user.value == "admin" && password.value == "admin") {
+    enter.disabled = true
+    alert("sucesso")
+
+    setTimeout(() => {
+      enter.disabled = false
+      window.location.href = "./html/menu.html"
+    }, 1000)
+  } else if (user.value == "func" && password.value == "func") {
+    enter.disabled = true
+    alert("sucesso")
+
+    setTimeout(() => {
+      enter.disabled = false
+      window.location.href = "./html/menuFunc.html"
+    }, 1000)
+  } else {
+    alert("usuario ou senha incorretos")
+  }
+}
 
 let createUser = document.getElementById("createUser")
 let labelCreateUser = document.getElementById("labelCreateUser")
@@ -33,6 +44,8 @@ let optionFirst = document.getElementById("first")
 
 let msgError = document.getElementById("msgError")
 let msgSucess = document.getElementById("msgSucess")
+
+let botaoSubmit = document.getElementById("created")
 
 createUser.addEventListener("keyup", () => {
   if (createUser.value.length <= 5) {
@@ -115,9 +128,12 @@ function cadastrar() {
     msgError.setAttribute("style", "display: none")
     msgError.innerHTML = ""
 
+    botaoSubmit.disabled = true
+
     setTimeout(() => {
-      window.location.href = "./index.html"
-    }, 4000)
+      botaoSubmit.disabled = false
+      window.location.href = "../index.html"
+    }, 3000)
   } else {
     // cadastro incorreto
 

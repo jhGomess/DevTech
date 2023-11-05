@@ -24,19 +24,30 @@
 
         <form>
           <div class="input-wrapper">
-            <label for="usuario">Usuário</label>
-            <input type="text" id="usuario" placeholder="Digite seu usuário" />
+            <label for="user">Usuário</label>
+            <input type="text" id="user" placeholder="Digite seu usuário" />
           </div>
 
           <div class="input-wrapper">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" placeholder="Digite sua senha" />
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Digite sua senha"
+            />
           </div>
 
-          <input class="submit" type="submit" value="Entrar" />
+          <input
+            id="enter"
+            class="submit"
+            type="submit"
+            value="Entrar"
+            onclick="logar()"
+          />
         </form>
         <a href="./html/cadastro-login.html">Crie sua conta</a>
       </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
