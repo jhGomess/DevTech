@@ -53,11 +53,11 @@
           <div class="input-wrapper">
             <label id="labelTypeUser" for="typeUser">Tipo do usuário</label>
             <select name="typeUser" id="typeUser" required>
-              <option class="first" value="" hidden disabled selected>
+              <option id="first" class="first" value="" hidden selected>
                 Selecione
               </option>
-              <option value="adm">Administrador</option>
-              <option value="func">Funcionário</option>
+              <option id="adm" value="adm">Administrador</option>
+              <option id="func" value="func">Funcionário</option>
             </select>
           </div>
 
@@ -65,7 +65,7 @@
             class="submit"
             type="submit"
             id="created"
-            value="Criar"
+            value="Cadastrar"
             onclick="cadastrar()"
           />
         </form>
