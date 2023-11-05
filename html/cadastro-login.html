@@ -24,37 +24,35 @@
 
         <form id="form">
           <div class="input-wrapper">
-            <label for="user">Usuário</label>
+            <label id="labelCreateUser" for="createUser">Usuário</label>
             <input
               type="text"
-              id="user"
-              placeholder="Digite seu usuário"
+              id="createUser"
+              placeholder="crie seu nome de usuário"
               required
             />
           </div>
 
           <div class="input-wrapper">
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="exemplo@exemplo.com"
-              required
-            />
+            <label id="labelPassword" for="password">Senha</label>
+            <input type="password" id="password" placeholder="Crie sua senha" />
           </div>
 
           <div class="input-wrapper">
-            <label for="password">Senha</label>
+            <label id="labelConfirmPassword" for="confirmPassword"
+              >Confirmar Senha</label
+            >
             <input
               type="password"
-              id="password"
-              placeholder="Senha com no minimo 6 caracteres"
+              id="confirmPassword"
+              placeholder="Confirme sua senha"
+              required
             />
           </div>
 
           <div class="input-wrapper">
-            <label for="typeUser">Tipo do usuário</label>
-            <select name="tipoUsuário" id="typeUser" required>
+            <label id="labelTypeUser" for="typeUser">Tipo do usuário</label>
+            <select name="typeUser" id="typeUser" required>
               <option class="first" value="" hidden disabled selected>
                 Selecione
               </option>
@@ -63,7 +61,13 @@
             </select>
           </div>
 
-          <input class="submit" type="submit" id="created" value="Criar" />
+          <input
+            class="submit"
+            type="submit"
+            id="created"
+            value="Criar"
+            onclick="cadastrar()"
+          />
         </form>
 
         <a href="../index.html">Já tenho uma conta</a>
