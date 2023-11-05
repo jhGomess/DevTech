@@ -1,19 +1,17 @@
-function logar() {
-  let usuario = document.getElementById("usuario").value
-  let senha = document.getElementById("senha").value
+// function logar() {
+//   let usuario = document.getElementById("usuario").value
+//   let senha = document.getElementById("senha").value
 
-  if (usuario == "admin" && senha == "admin") {
-    alert("sucesso")
-    window.location.href = "./html/menu.html"
-  } else if (usuario == "func" && senha == "func") {
-    alert("sucesso")
-    window.location.href = "./html/menuFunc.html"
-  } else {
-    alert("usuario ou senha incorretos")
-  }
-}
-
-let form = document.getElementById("form")
+//   if (usuario == "admin" && senha == "admin") {
+//     alert("sucesso")
+//     window.location.href = "./html/menu.html"
+//   } else if (usuario == "func" && senha == "func") {
+//     alert("sucesso")
+//     window.location.href = "./html/menuFunc.html"
+//   } else {
+//     alert("usuario ou senha incorretos")
+//   }
+// }
 
 let createUser = document.getElementById("createUser")
 let labelCreateUser = document.getElementById("labelCreateUser")
@@ -99,12 +97,30 @@ function cadastrar() {
     validConfirmPassword &&
     validTypeUser
   ) {
+    //implementando o localStorage se o cadastro foi sucesso, cadastro correto
+
+    let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
+
+    listaUser.push({
+      createUserCad: createUser.value,
+      createPasswordCad: createPassword.value,
+      typeUserCad: typeUser.value,
+    })
+
+    localStorage.setItem("listaUser", JSON.stringify(listaUser))
+
     msgSucess.setAttribute("style", "display: block")
     msgSucess.innerHTML = "<strong>Cadastrando Usuário...</strong>"
 
     msgError.setAttribute("style", "display: none")
     msgError.innerHTML = ""
+
+    setTimeout(() => {
+      window.location.href = "./index.html"
+    }, 4000)
   } else {
+    // cadastro incorreto
+
     msgError.setAttribute("style", "display: block")
     msgError.innerHTML =
       "<strong>Preencha todos os campos corretamente</strong>"
@@ -113,39 +129,3 @@ function cadastrar() {
     msgSucess.innerHTML = ""
   }
 }
-
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault()
-//   if (createUser.value === "") {
-//     alert("por favor, preencha seu nome")
-//     return
-//   }
-
-//   if (validatorEmail(email.value) !== true) {
-//     alert("email deve possuir @ e .com")
-//     return
-//   }
-
-//   if (validatorPassword(createPassword.value) !== true) {
-//     alert("senha deve possuir no minimo 6 caracteres")
-//     return
-//   }
-
-//   // se todos os campos estiverem preechidos, envie o form
-//   form.submit()
-// })
-
-// function validatorEmail(email) {
-//   let emailPattern =
-//     /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
-
-//   return emailPattern.test(email)
-// }
-
-// function validatorPassword(createPassword) {
-//   if (createPassword.length >= 6) {
-//     return true
-//   } else {
-//     return false
-//   }
-// }
