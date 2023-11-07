@@ -1,147 +1,93 @@
-let user = document.getElementById("user")
-let password = document.getElementById("password")
-let enter = document.getElementById("enter")
-
 function logar() {
-  if (user.value == "admin" && password.value == "admin") {
-    enter.disabled = true
-    alert("sucesso")
+  let user = document.getElementById("user")
+  let userLabel = document.getElementById("userLabel")
+  let password = document.getElementById("password")
+  let passwordLabel = document.getElementById("passwordLabel")
 
-    setTimeout(() => {
-      enter.disabled = false
-      window.location.href = "./html/menu.html"
-    }, 1000)
-  } else if (user.value == "func" && password.value == "func") {
-    enter.disabled = true
-    alert("sucesso")
+  let msgError = document.getElementById("msgError")
+  let msgSucess = document.getElementById("msgSucess")
+  let listaUser = []
 
-    setTimeout(() => {
-      enter.disabled = false
-      window.location.href = "./html/menuFunc.html"
-    }, 1000)
-  } else {
-    alert("usuario ou senha incorretos")
+  let userValid = {
+    user: "",
+    password: "",
+    typeUser: "",
   }
-}
 
-let createUser = document.getElementById("createUser")
-let labelCreateUser = document.getElementById("labelCreateUser")
-let validCreateUser = false
+  listaUser = JSON.parse(localStorage.getItem("listaUser"))
 
-let createPassword = document.getElementById("password")
-let labelPassword = document.getElementById("labelPassword")
-let validCreatePassword = false
+  listaUser.forEach((item) => {
+    if (
+      user.value == item.createUserCad &&
+      password.value == item.createPasswordCad
+    ) {
+      userValid = {
+        user: item.createUserCad,
+        password: item.createPasswordCad,
+        typeUser: item.typeUserCad,
+      }
+    }
+  })
 
-let confirmPassword = document.getElementById("confirmPassword")
-let labelConfirmPassword = document.getElementById("labelConfirmPassword")
-let validConfirmPassword = false
-
-let typeUser = document.getElementById("typeUser")
-let labelTypeUser = document.getElementById("labelTypeUser")
-let validTypeUser = false
-
-let optionFirst = document.getElementById("first")
-
-let msgError = document.getElementById("msgError")
-let msgSucess = document.getElementById("msgSucess")
-
-let botaoSubmit = document.getElementById("created")
-
-createUser.addEventListener("keyup", () => {
-  if (createUser.value.length <= 5) {
-    labelCreateUser.setAttribute("style", "color: red")
-    labelCreateUser.innerHTML = "Usuário *Insira no minimo 6 caracteres"
-    createUser.setAttribute("style", "outline:1px solid red")
-    validCreateUser = false
-  } else {
-    labelCreateUser.setAttribute("style", "color: #c4c4cc")
-    labelCreateUser.innerHTML = "Usuário"
-    createUser.setAttribute("style", "outline-color: 1px solid white")
-    validCreateUser = true
-  }
-})
-
-createPassword.addEventListener("keyup", () => {
-  if (createPassword.value.length <= 5) {
-    labelPassword.setAttribute("style", "color: red")
-    labelPassword.innerHTML = "Senha *Deve possuir no minimo 6 caracteres"
-    createPassword.setAttribute("style", "outline:1px solid red")
-    validCreatePassword = false
-  } else {
-    labelPassword.setAttribute("style", "color: #c4c4cc")
-    labelPassword.innerHTML = "Senha"
-    createPassword.setAttribute("style", "outline-color:1px solid white")
-    validCreatePassword = true
-  }
-})
-
-confirmPassword.addEventListener("keyup", () => {
-  if (confirmPassword.value != createPassword.value) {
-    labelConfirmPassword.setAttribute("style", "color: red")
-    labelConfirmPassword.innerHTML = "Confirmar Senha *As senhas não conferem"
-    confirmPassword.setAttribute("style", "outline:1px solid red")
-    validConfirmPassword = false
-  } else {
-    labelConfirmPassword.setAttribute("style", "color: #c4c4cc")
-    labelConfirmPassword.innerHTML = "Confirmar Senha"
-    confirmPassword.setAttribute("style", "outline-color:1px solid white")
-    validConfirmPassword = true
-  }
-})
-
-typeUser.addEventListener("click", () => {
-  if (typeUser.value == optionFirst.value) {
-    labelTypeUser.setAttribute("style", "color: red")
-    labelTypeUser.innerHTML = "Tipo do Usuário *Selecione uma das opções"
-    typeUser.setAttribute("style", "outline:1px solid red")
-    validTypeUser = false
-  } else {
-    labelTypeUser.setAttribute("style", "color: #c4c4cc")
-    labelTypeUser.innerHTML = "Tipo so Usuário"
-    typeUser.setAttribute("style", "outline-color:1px solid white")
-    validTypeUser = true
-  }
-})
-
-function cadastrar() {
   if (
-    validCreateUser &&
-    validCreatePassword &&
-    validConfirmPassword &&
-    validTypeUser
+    user.value == userValid.user &&
+    password.value == userValid.password &&
+    userValid.typeUser == "adm"
   ) {
-    //implementando o localStorage se o cadastro foi sucesso, cadastro correto
-
-    let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
-
-    listaUser.push({
-      createUserCad: createUser.value,
-      createPasswordCad: createPassword.value,
-      typeUserCad: typeUser.value,
-    })
-
-    localStorage.setItem("listaUser", JSON.stringify(listaUser))
+    enter.disabled = true
 
     msgSucess.setAttribute("style", "display: block")
-    msgSucess.innerHTML = "<strong>Cadastrando Usuário...</strong>"
+    msgSucess.innerHTML = "Logando..."
+
+    user.setAttribute("style", "outline: 1px solid green")
+    userLabel.setAttribute("style", "color: #c4c4cc")
+    password.setAttribute("style", "outline: 1px solid green")
+    passwordLabel.setAttribute("style", "color: #c4c4cc")
 
     msgError.setAttribute("style", "display: none")
     msgError.innerHTML = ""
 
-    botaoSubmit.disabled = true
+    setTimeout(() => {
+      enter.disabled = false
+      window.location.href = "./html/menu.html"
+    }, 2000)
+  } else if (
+    user.value == userValid.user &&
+    password.value == userValid.password &&
+    userValid.typeUser == "func"
+  ) {
+    enter.disabled = true
+
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "Logando..."
+
+    user.setAttribute("style", "outline: 1px solid green")
+    userLabel.setAttribute("style", "color: #c4c4cc")
+    password.setAttribute("style", "outline: 1px solid green")
+    passwordLabel.setAttribute("style", "color: #c4c4cc")
+
+    msgError.setAttribute("style", "display: none")
+    msgError.innerHTML = ""
 
     setTimeout(() => {
-      botaoSubmit.disabled = false
-      window.location.href = "../index.html"
-    }, 3000)
+      enter.disabled = false
+      window.location.href = "./html/menuFunc.html"
+    }, 2000)
   } else {
-    // cadastro incorreto
+    enter.disabled = true
+
+    setTimeout(() => {
+      enter.disabled = false
+    }, 1000)
+
+    user.setAttribute("style", "outline:1px solid red")
+    userLabel.setAttribute("style", "color: red")
+    password.setAttribute("style", "outline:1px solid red")
+    passwordLabel.setAttribute("style", "color: red")
 
     msgError.setAttribute("style", "display: block")
-    msgError.innerHTML =
-      "<strong>Preencha todos os campos corretamente</strong>"
+    msgError.innerHTML = "Usuário ou senha incorretos"
 
-    msgSucess.setAttribute("style", "display: none")
-    msgSucess.innerHTML = ""
+    user.focus()
   }
 }
