@@ -30,6 +30,11 @@ let state = document.getElementById("state")
 let labelState = document.getElementById("labelState")
 let validState = false
 
+let msgError = document.getElementById("msgError")
+let msgSucess = document.getElementById("msgSucess")
+
+let submitCompany = document.getElementById("createdCompany")
+
 company.addEventListener("keyup", () => {
   if (company.value.length == 0) {
     labelCompany.setAttribute("style", "color: red")
@@ -141,3 +146,55 @@ state.addEventListener("keyup", () => {
     validState = true
   }
 })
+
+function cadastrarEmpresa() {
+  if (
+    validCompany &&
+    validCnpj &&
+    validId &&
+    validPhone &&
+    validEmailCompany &&
+    validAddress &&
+    validCity &&
+    validState
+  ) {
+    //implementando o localStorage se o cadastro foi sucesso, cadastro correto
+
+    let listaCompany = JSON.parse(localStorage.getItem("listaCompany") || "[]")
+
+    listaCompany.push({
+      companyCad: company.value,
+      cnpjCad: cnpj.value,
+      idCad: id.value,
+      phoneCad: phone.value,
+      emailCompanyCad: emailCompany.value,
+      addressCad: address.value,
+      cityCad: city.value,
+      stateCad: state.value,
+    })
+
+    localStorage.setItem("listaCompany", JSON.stringify(listaCompany))
+
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Cadastrando Empresa...</strong>"
+
+    msgError.setAttribute("style", "display: none")
+    msgError.innerHTML = ""
+
+    submitCompany.disabled = true
+
+    setTimeout(() => {
+      submitCompany.disabled = false
+      location.reload()
+    }, 3000)
+  } else {
+    // cadastro incorreto
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML =
+      "<strong>Preencha todos os campos corretamente</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
+  }
+}

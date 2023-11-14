@@ -29,6 +29,9 @@
         </div>
       </nav>
       <main>
+        <div id="msgError"></div>
+        <div id="msgSucess"></div>
+
         <a href="./menu.html"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
@@ -89,10 +92,11 @@
             </div>
 
             <input
+              id="createdCompany"
               class="submit"
               type="submit"
               value="Cadastrar"
-              onclick="cadastrarEmpresa(); return false"
+              onclick="cadastrarEmpresa()"
             />
           </fieldset>
         </form>

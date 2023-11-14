@@ -203,3 +203,27 @@ footer {
   height: 10rem;
   background: var(--bg-nav);
 }
+
+#msgError {
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 1rem;
+  border-radius: 0.4;
+  display: none;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#msgSucess {
+  text-align: center;
+  color: #00bb00;
+  background-color: #bbffbb;
+  padding: 1rem;
+  border-radius: 0.4;
+  display: none;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
