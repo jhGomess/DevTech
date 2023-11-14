@@ -34,6 +34,7 @@ let msgError = document.getElementById("msgError")
 let msgSucess = document.getElementById("msgSucess")
 
 let submitCompany = document.getElementById("createdCompany")
+let consultCompany = document.getElementById("consultCompany")
 
 company.addEventListener("keyup", () => {
   if (company.value.length == 0) {
@@ -162,7 +163,7 @@ function cadastrarEmpresa() {
 
     let listaCompany = JSON.parse(localStorage.getItem("listaCompany") || "[]")
 
-    listaCompany.push({
+    let newListaCompany = {
       companyCad: company.value,
       cnpjCad: cnpj.value,
       idCad: id.value,
@@ -171,7 +172,9 @@ function cadastrarEmpresa() {
       addressCad: address.value,
       cityCad: city.value,
       stateCad: state.value,
-    })
+    }
+
+    listaCompany.push(newListaCompany)
 
     localStorage.setItem("listaCompany", JSON.stringify(listaCompany))
 
@@ -197,4 +200,46 @@ function cadastrarEmpresa() {
     msgSucess.setAttribute("style", "display: none")
     msgSucess.innerHTML = ""
   }
+}
+
+function consultarEmpresa() {
+  let listaCompany = JSON.parse(localStorage.getItem("listaCompany"))
+
+  if (listaCompany && listaCompany.length > 0) {
+    listaCompany.forEach((lista) => {
+      company.value = `${lista.companyCad}`
+      cnpj.value = `${lista.cnpjCad}`
+      id.value = `${lista.idCad}`
+      phone.value = `${lista.phoneCad}`
+      emailCompany.value = `${lista.emailCompanyCad}`
+      address.value = `${lista.addressCad}`
+      city.value = `${lista.cityCad}`
+      state.value = `${lista.stateCad}`
+    })
+  }
+}
+
+function alterarEmpresa(
+  companyCad,
+  cnpjCad,
+  idCad,
+  phoneCad,
+  emailCompanyCad,
+  addressCad,
+  cityCad,
+  stateCad
+) {
+  let noteEdit = JSON.parse(localStorage.getItem("listaCompany"))
+
+  noteEdit.push({
+    companyCad: company.value,
+    cnpjCad: cnpj.value,
+    idCad: id.value,
+    phoneCad: phone.value,
+    emailCompanyCad: emailCompany.value,
+    addressCad: address.value,
+    cityCad: city.value,
+    stateCad: state.value,
+  })
+  localStorage.setItem("listaCompany", JSON.stringify(noteEdit))
 }
