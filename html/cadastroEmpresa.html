@@ -37,23 +37,23 @@
             <legend>Cadastrar Empresa</legend>
 
             <div class="input-wrapper">
-              <label for="nameCompany">Nome da Empresa</label>
-              <input type="text" id="nameCompany" placeholder="Ex: UNIP" />
+              <label id="labelCompany" for="Company">Nome da Empresa</label>
+              <input type="text" id="Company" placeholder="Ex: UNIP" />
             </div>
 
             <div class="input-wrapper">
-              <label for="cnpj">CNPJ</label>
+              <label id="labelCnpj" for="cnpj">CNPJ</label>
               <input type="text" id="cnpj" placeholder="xx.xxx.xxx/0001-xx" />
             </div>
 
             <div class="col-2">
               <div class="input-wrapper">
-                <label for="id">id</label>
+                <label id="labelId" for="id">id</label>
                 <input type="number" id="id" placeholder="xxx" />
               </div>
 
               <div class="input-wrapper">
-                <label for="phone">Telefone</label>
+                <label id="labelPhone" for="phone">Telefone</label>
                 <input
                   type="number"
                   id="phone"
@@ -63,7 +63,7 @@
             </div>
 
             <div class="input-wrapper">
-              <label for="email">E-mail</label>
+              <label id="labelEmail" for="email">E-mail</label>
               <input
                 type="email"
                 id="email"
@@ -72,18 +72,18 @@
             </div>
 
             <div class="input-wrapper">
-              <label for="address">Endereço</label>
+              <label id="labelAddress" for="address">Endereço</label>
               <input type="text" id="address" placeholder="rua exemplo, 000" />
             </div>
 
             <div class="col-2">
               <div class="input-wrapper">
-                <label for="city">Cidade</label>
+                <label id="labelCity" for="city">Cidade</label>
                 <input type="text" id="city" placeholder="Ex: São Paulo" />
               </div>
 
               <div class="input-wrapper">
-                <label for="state">Estado</label>
+                <label id="labelState" for="state">Estado</label>
                 <input type="text" id="state" placeholder="Ex: SP" />
               </div>
             </div>
@@ -92,7 +92,7 @@
               class="submit"
               type="submit"
               value="Cadastrar"
-              onclick="logar(); return false"
+              onclick="cadastrarEmpresa(); return false"
             />
           </fieldset>
         </form>
