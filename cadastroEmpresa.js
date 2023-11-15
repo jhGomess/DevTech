@@ -187,23 +187,39 @@ function cadastrarEmpresa() {
 
     submitCompany.disabled = true
 
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Comportamento de rolagem suave
+    })
+
     setTimeout(() => {
       submitCompany.disabled = false
       location.reload()
     }, 3000)
   } else {
     // cadastro incorreto
+    submitCompany.disabled = true
 
     msgError.setAttribute("style", "display: block")
     msgError.innerHTML =
       "<strong>Preencha todos os campos corretamente</strong>"
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+
+    setTimeout(() => {
+      submitCompany.disabled = false
+      location.reload()
+    }, 3000)
 
     msgSucess.setAttribute("style", "display: none")
     msgSucess.innerHTML = ""
   }
 }
 
-function consultarEmpresa(idCad) {
+function consultarEmpresa() {
   consultCompany.disabled = true
 
   msgSucess.setAttribute("style", "display: block")
@@ -269,13 +285,42 @@ function alterarEmpresa(
 
   alterCompany.disabled = true
 
+  // window.scrollTo(
+  //   {
+  //     top: 0,
+  //     behavior: "smooth",
+  //   },
+  //   1000
+  // )
+
+  msgSucess.setAttribute("style", "display: block")
+  msgSucess.innerHTML = "<strong>Alterando Dados da Empresa...</strong>"
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+
   setTimeout(() => {
     alterCompany.disabled = false
-
     location.reload()
   }, 3000)
 }
 
 function excluirEmpresa() {
-  localStorage.removeItem("listaCompany")
+  msgError.setAttribute("style", "display: block")
+  msgError.innerHTML = "<strong>Excluindo empresa...</strong>"
+
+  deleteCompany.disabled = true
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+
+  setTimeout(() => {
+    deleteCompany.disabled = false
+    location.reload()
+    localStorage.removeItem("listaCompany")
+  }, 3000)
 }
