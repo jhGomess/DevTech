@@ -35,6 +35,7 @@ let msgSucess = document.getElementById("msgSucess")
 
 let submitCompany = document.getElementById("createdCompany")
 let consultCompany = document.getElementById("consultCompany")
+let alterCompany = document.getElementById("alterCompany")
 
 company.addEventListener("keyup", () => {
   if (company.value.length == 0) {
@@ -202,7 +203,21 @@ function cadastrarEmpresa() {
   }
 }
 
-function consultarEmpresa() {
+function consultarEmpresa(idCad) {
+  consultCompany.disabled = true
+
+  msgSucess.setAttribute("style", "display: block")
+  msgSucess.innerHTML = "<strong>Consultando Empresa...</strong>"
+
+  setTimeout(() => {
+    consultCompany.disabled = false
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
+  }, 3000)
+
+  msgError.setAttribute("style", "display: none")
+  msgError.innerHTML = ""
+
   let listaCompany = JSON.parse(localStorage.getItem("listaCompany"))
 
   if (listaCompany && listaCompany.length > 0) {
@@ -216,6 +231,14 @@ function consultarEmpresa() {
       city.value = `${lista.cityCad}`
       state.value = `${lista.stateCad}`
     })
+  } else {
+    // cadastro incorreto
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Empresa não encontrada</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
   }
 }
 
@@ -229,9 +252,9 @@ function alterarEmpresa(
   cityCad,
   stateCad
 ) {
-  let noteEdit = JSON.parse(localStorage.getItem("listaCompany"))
+  let companyEdit = JSON.parse(localStorage.getItem("listaCompany"))
 
-  noteEdit.push({
+  companyEdit.push({
     companyCad: company.value,
     cnpjCad: cnpj.value,
     idCad: id.value,
@@ -241,5 +264,18 @@ function alterarEmpresa(
     cityCad: city.value,
     stateCad: state.value,
   })
-  localStorage.setItem("listaCompany", JSON.stringify(noteEdit))
+
+  localStorage.setItem("listaCompany", JSON.stringify(companyEdit))
+
+  alterCompany.disabled = true
+
+  setTimeout(() => {
+    alterCompany.disabled = false
+
+    location.reload()
+  }, 3000)
+}
+
+function excluirEmpresa() {
+  localStorage.removeItem("listaCompany")
 }
