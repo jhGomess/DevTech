@@ -28,6 +28,7 @@ let msgSucess = document.getElementById("msgSucess")
 let registerDepartment = document.getElementById("createdDepartment")
 let consultDepartment = document.getElementById("consultDepartment")
 let alterDepartment = document.getElementById("alterDepartment")
+let deleteDepartment = document.getElementById("deleteDepartment")
 
 // function performSearch() {
 //   var searchInput = document.getElementById("searchDepartament").value
@@ -275,6 +276,49 @@ function alterarDepartamento() {
       alterDepartment.disabled = false
       location.reload()
     }, 3000)
+  }
+}
+
+function excluirDepartamento() {
+  deleteDepartment.disabled = true
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+
+  setTimeout(() => {
+    deleteDepartment.disabled = false
+    location.reload()
+  }, 3000)
+
+  let searchDepartment = document
+    .getElementById("searchDepartment")
+    .value.trim()
+    .toLowerCase()
+  let departmentList = JSON.parse(localStorage.getItem("listaDepartment")) || []
+
+  let indexDepartamento = departmentList.findIndex(
+    (departamento) =>
+      departamento.idDepartmentCad === searchDepartment ||
+      departamento.departmentCad.toLowerCase() === searchDepartment
+  )
+
+  if (indexDepartamento !== -1) {
+    // Remove o departamento da lista pelo índice encontrado
+    departmentList.splice(indexDepartamento, 1)
+
+    // Atualiza o localStorage sem o departamento excluído
+    localStorage.setItem("listaDepartment", JSON.stringify(departmentList))
+
+    // Mensagem de sucesso ou outras ações após a exclusão
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Excluindo departamento...</strong>"
+  } else {
+    // Mensagem se o departamento não for encontrado
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML =
+      "<strong>Departamento não encontrado para exclusão</strong>"
   }
 }
 
