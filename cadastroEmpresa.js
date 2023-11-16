@@ -101,7 +101,7 @@ emailCompany.addEventListener("keyup", () => {
     validEmailCompany = false
   } else {
     labelEmailCompany.setAttribute("style", "color: #c4c4cc")
-    labelEmailCompany.innerHTML = "Email"
+    labelEmailCompany.innerHTML = "E-mail"
     emailCompany.setAttribute("style", "outline-color: 1px solid white")
     validEmailCompany = true
   }
