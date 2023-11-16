@@ -29,6 +29,9 @@
         </div>
       </nav>
       <main>
+        <div id="msgError"></div>
+        <div id="msgSucess"></div>
+
         <a href="./menu.html"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
@@ -45,60 +48,71 @@
 
               <input
                 type="search"
-                name="searchDepartament"
-                id="searchDepartament"
+                name="searchDepartment"
+                id="searchDepartment"
                 placeholder="Busque o departamento pelo nome ou id"
               />
             </div>
 
             <input
+              id="consultDepartment"
               class="submit"
               type="submit"
               value="Consultar"
-              onclick="logar(); return false"
+              onclick="consultarDepartamento()"
             />
 
             <div class="input-wrapper">
-              <label for="nameDepartment">Nome do Departamento</label>
-              <input type="text" id="nameDepartment" placeholder="Ex: TI" />
+              <label id="labelDepartment" for="department"
+                >Nome do Departamento</label
+              >
+              <input type="text" id="department" placeholder="Ex: TI" />
             </div>
 
             <div class="input-wrapper">
-              <label for="nameResponsible">Nome do Responsável</label>
+              <label id="labelResponsible" for="responsible"
+                >Nome do Responsável</label
+              >
               <input
                 type="text"
-                id="nameResponsible"
+                id="responsible"
                 placeholder="Ex: Jhuan Gomes"
               />
             </div>
 
             <div class="col-2">
               <div class="input-wrapper">
-                <label for="id">id</label>
-                <input type="number" id="id" placeholder="xxx" />
+                <label id="labelIdDepartment" for="idDepartment">id</label>
+                <input type="number" id="idDepartment" placeholder="xxx" />
               </div>
 
               <div class="input-wrapper">
-                <label for="phone">Telefone</label>
+                <label id="labelPhoneDepartment" for="phoneDepartment"
+                  >Telefone</label
+                >
                 <input
                   type="number"
-                  id="phone"
+                  id="phoneDepartment"
                   placeholder="(xx) x xxxx-xxxx"
                 />
               </div>
             </div>
 
             <div class="input-wrapper">
-              <label for="email">E-mail</label>
+              <label id="labelEmailDepartment" for="emailDepartment"
+                >E-mail</label
+              >
               <input
                 type="email"
-                id="email"
+                id="emailDepartment"
                 placeholder="exemplo@exemplo.com"
               />
             </div>
 
             <div class="input-wrapper">
-              <label for="description">Descrição de Departamento</label>
+              <label id="labelDescription" for="description"
+                >Descrição de Departamento</label
+              >
               <textarea
                 name="description"
                 id="description"
@@ -107,8 +121,22 @@
             </div>
 
             <div class="button-2">
-              <button class="yellow">Alterar</button>
-              <button class="red">Excluir</button>
+              <input
+                id="alterCompany"
+                class="yellow"
+                type="submit"
+                value="Alterar"
+                onclick="alterarEmpresa()"
+              />
+              <!-- <input class="yellow">Alterar/> -->
+
+              <input
+                id="deleteCompany"
+                class="red"
+                type="submit"
+                value="Excluir"
+                onclick="excluirEmpresa()"
+              />
             </div>
           </fieldset>
         </form>
@@ -116,6 +144,6 @@
     </div>
     <footer></footer>
 
-    <script src="../javascript/consultarDepartamento.js"></script>
+    <script src="../cadastroDepartamento.js"></script>
   </body>
 </html>

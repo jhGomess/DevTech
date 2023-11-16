@@ -6,17 +6,17 @@ let responsible = document.getElementById("responsible")
 let labelResponsible = document.getElementById("labelResponsible")
 let validResponsible = false
 
-let idDepartament = document.getElementById("idDepartament")
-let labelIdDepartament = document.getElementById("labelIdDepartament")
-let validIdDepartament = false
+let idDepartment = document.getElementById("idDepartment")
+let labelIdDepartment = document.getElementById("labelIdDepartment")
+let validIdDepartment = false
 
-let phoneDepartament = document.getElementById("phoneDepartament")
-let labelPhoneDepartament = document.getElementById("labelPhoneDepartament")
-let validPhoneDepartament = false
+let phoneDepartment = document.getElementById("phoneDepartment")
+let labelPhoneDepartment = document.getElementById("labelPhoneDepartment")
+let validPhoneDepartment = false
 
-let emailDepartament = document.getElementById("emailDepartament")
-let labelEmailDepartament = document.getElementById("labelEmailDepartament")
-let validEmailDepartament = false
+let emailDepartment = document.getElementById("emailDepartment")
+let labelEmailDepartment = document.getElementById("labelEmailDepartment")
+let validEmailDepartment = false
 
 let description = document.getElementById("description")
 let labelDescription = document.getElementById("labelDescription")
@@ -25,7 +25,15 @@ let validDescription = false
 let msgError = document.getElementById("msgError")
 let msgSucess = document.getElementById("msgSucess")
 
-let registerDepartament = document.getElementById("createdDepartament")
+let registerDepartment = document.getElementById("createdDepartment")
+let consultDepartment = document.getElementById("consultDepartment")
+
+function performSearch() {
+  var searchTerm = document.getElementById("searchDepartament").value
+  // Aqui você pode adicionar a lógica para processar a pesquisa, por exemplo, redirecionar para uma página de resultados.
+  var searchInput = document.getElementById("searchDepartament")
+  searchInput.focus()
+}
 
 department.addEventListener("keyup", () => {
   if (department.value.length == 0) {
@@ -55,45 +63,45 @@ responsible.addEventListener("keyup", () => {
   }
 })
 
-idDepartament.addEventListener("keyup", () => {
-  if (idDepartament.value.length === 0) {
-    labelIdDepartament.setAttribute("style", "color: red")
-    labelIdDepartament.innerHTML = "id *Insira um id válido"
-    idDepartament.setAttribute("style", "outline:1px solid red")
-    validIdDepartament = false
+idDepartment.addEventListener("keyup", () => {
+  if (idDepartment.value.length === 0) {
+    labelIdDepartment.setAttribute("style", "color: red")
+    labelIdDepartment.innerHTML = "id *Insira um id válido"
+    idDepartment.setAttribute("style", "outline:1px solid red")
+    validIdDepartment = false
   } else {
-    labelIdDepartament.setAttribute("style", "color: #c4c4cc")
-    labelIdDepartament.innerHTML = "id"
-    idDepartament.setAttribute("style", "outline-color: 1px solid white")
-    validIdDepartament = true
+    labelIdDepartment.setAttribute("style", "color: #c4c4cc")
+    labelIdDepartment.innerHTML = "id"
+    idDepartment.setAttribute("style", "outline-color: 1px solid white")
+    validIdDepartment = true
   }
 })
 
-phoneDepartament.addEventListener("keyup", () => {
-  if (phoneDepartament.value.length != 11) {
-    labelPhoneDepartament.setAttribute("style", "color: red")
-    labelPhoneDepartament.innerHTML = "Telefone *Insira um telefone válido"
-    phoneDepartament.setAttribute("style", "outline:1px solid red")
-    validPhoneDepartament = false
+phoneDepartment.addEventListener("keyup", () => {
+  if (phoneDepartment.value.length != 11) {
+    labelPhoneDepartment.setAttribute("style", "color: red")
+    labelPhoneDepartment.innerHTML = "Telefone *Insira um telefone válido"
+    phoneDepartment.setAttribute("style", "outline:1px solid red")
+    validPhoneDepartment = false
   } else {
-    labelPhoneDepartament.setAttribute("style", "color: #c4c4cc")
-    labelPhoneDepartament.innerHTML = "Telefone"
-    phoneDepartament.setAttribute("style", "outline-color: 1px solid white")
-    validPhoneDepartament = true
+    labelPhoneDepartment.setAttribute("style", "color: #c4c4cc")
+    labelPhoneDepartment.innerHTML = "Telefone"
+    phoneDepartment.setAttribute("style", "outline-color: 1px solid white")
+    validPhoneDepartment = true
   }
 })
 
-emailDepartament.addEventListener("keyup", () => {
-  if (emailDepartament.value.length <= 1) {
-    labelEmailDepartament.setAttribute("style", "color: red")
-    labelEmailDepartament.innerHTML = "E-mail *Insira um e-mail válido"
-    emailDepartament.setAttribute("style", "outline:1px solid red")
-    validEmailDepartament = false
+emailDepartment.addEventListener("keyup", () => {
+  if (emailDepartment.value.length <= 1) {
+    labelEmailDepartment.setAttribute("style", "color: red")
+    labelEmailDepartment.innerHTML = "E-mail *Insira um e-mail válido"
+    emailDepartment.setAttribute("style", "outline:1px solid red")
+    validEmailDepartment = false
   } else {
-    labelEmailDepartament.setAttribute("style", "color: #c4c4cc")
-    labelEmailDepartament.innerHTML = "E-mail"
-    emailDepartament.setAttribute("style", "outline-color: 1px solid white")
-    validEmailDepartament = true
+    labelEmailDepartment.setAttribute("style", "color: #c4c4cc")
+    labelEmailDepartment.innerHTML = "E-mail"
+    emailDepartment.setAttribute("style", "outline-color: 1px solid white")
+    validEmailDepartment = true
   }
 })
 
@@ -116,9 +124,9 @@ function cadastrarDepartamento() {
   if (
     validDepartment &&
     validResponsible &&
-    validIdDepartament &&
-    validPhoneDepartament &&
-    validEmailDepartament &&
+    validIdDepartment &&
+    validPhoneDepartment &&
+    validEmailDepartment &&
     validDescription
   ) {
     //implementando o localStorage se o cadastro foi sucesso, cadastro correto
@@ -130,9 +138,9 @@ function cadastrarDepartamento() {
     let newListaDepartment = {
       departmentCad: department.value,
       responsibleCad: responsible.value,
-      idDepartmentCad: idDepartament.value,
-      phoneDepartmentCad: phoneDepartament.value,
-      emailDepartmentCad: emailDepartament.value,
+      idDepartmentCad: idDepartment.value,
+      phoneDepartmentCad: phoneDepartment.value,
+      emailDepartmentCad: emailDepartment.value,
       descriptionCad: description.value,
     }
 
@@ -146,7 +154,7 @@ function cadastrarDepartamento() {
     msgError.setAttribute("style", "display: none")
     msgError.innerHTML = ""
 
-    registerDepartament.disabled = true
+    registerDepartment.disabled = true
 
     window.scrollTo({
       top: 0,
@@ -154,12 +162,12 @@ function cadastrarDepartamento() {
     })
 
     setTimeout(() => {
-      registerDepartament.disabled = false
+      registerDepartment.disabled = false
       location.reload()
     }, 3000)
   } else {
     // cadastro incorreto
-    registerDepartament.disabled = true
+    registerDepartment.disabled = true
 
     msgError.setAttribute("style", "display: block")
     msgError.innerHTML =
@@ -174,8 +182,48 @@ function cadastrarDepartamento() {
     })
 
     setTimeout(() => {
-      registerDepartament.disabled = false
+      registerDepartment.disabled = false
       location.reload()
     }, 3000)
+  }
+}
+
+function consultarDepartamento() {
+  consultDepartment.disabled = true
+
+  msgSucess.setAttribute("style", "display: block")
+  msgSucess.innerHTML = "<strong>Consultando Departamento...</strong>"
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+
+  setTimeout(() => {
+    consultDepartment.disabled = false
+  }, 3000)
+
+  msgError.setAttribute("style", "display: none")
+  msgError.innerHTML = ""
+
+  let listaDepartment = JSON.parse(localStorage.getItem("listaDepartment"))
+
+  if (listaDepartment && listaDepartment.length > 0) {
+    listaDepartment.forEach((lista) => {
+      department.value = `${lista.departmentCad}`
+      responsible.value = `${lista.responsibleCad}`
+      idDepartment.value = `${lista.idDepartmentCad}`
+      phoneDepartment.value = `${lista.phoneDepartmentCad}`
+      emailDepartment.value = `${lista.emailDepartmentCad}`
+      description.value = `${lista.descriptionCad}`
+    })
+  } else {
+    // cadastro incorreto
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
   }
 }
