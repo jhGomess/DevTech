@@ -27,6 +27,7 @@ let msgSucess = document.getElementById("msgSucess")
 
 let registerDepartment = document.getElementById("createdDepartment")
 let consultDepartment = document.getElementById("consultDepartment")
+let alterDepartment = document.getElementById("alterDepartment")
 
 // function performSearch() {
 //   var searchInput = document.getElementById("searchDepartament").value
@@ -239,6 +240,44 @@ function consultarDepartamento() {
   }
 }
 
+function alterarDepartamento() {
+  let searchDepartment = document
+    .getElementById("searchDepartment")
+    .value.trim()
+    .toLowerCase()
+
+  let departmentEdit = JSON.parse(localStorage.getItem("listaDepartment"))
+
+  let indexDepartamento = departmentEdit.findIndex(
+    (departamento) =>
+      departamento.idDepartmentCad === searchDepartment ||
+      departamento.departmentCad.toLowerCase() === searchDepartment
+  )
+
+  if (indexDepartamento !== -1) {
+    // Aqui você pode alterar os dados do departamento
+    departmentEdit[indexDepartamento].departmentCad = department.value
+    departmentEdit[indexDepartamento].responsibleCad = responsible.value
+
+    localStorage.setItem("listaDepartment", JSON.stringify(departmentEdit))
+
+    alterDepartment.disabled = true
+
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Alterando Dados do Departamento...</strong>"
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+
+    setTimeout(() => {
+      alterDepartment.disabled = false
+      location.reload()
+    }, 3000)
+  }
+}
+
 // listaDepartment.forEach((lista) => {
 //   department.value = `${lista.departmentCad}`
 //   responsible.value = `${lista.responsibleCad}`
@@ -246,4 +285,20 @@ function consultarDepartamento() {
 //   phoneDepartment.value = `${lista.phoneDepartmentCad}`
 //   emailDepartment.value = `${lista.emailDepartmentCad}`
 //   description.value = `${lista.descriptionCad}`
+// })
+
+// departmentCad,
+//   responsibleCad,
+//   idDepartmentCad,
+//   phoneDepartmentCad,
+//   emailDepartmentCad,
+//   descriptionCad
+
+// departmentEdit.push({
+//   departmentCad: department.value,
+//   responsibleCad: responsible.value,
+//   idDepartmentCad: idDepartment.value,
+//   phoneDepartmentCad: phoneDepartment.value,
+//   emailDepartmentCad: emailDepartment.value,
+//   descriptionCad: description.value,
 // })
