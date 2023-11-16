@@ -208,6 +208,9 @@ function consultarDepartamento() {
 
   setTimeout(() => {
     consultDepartment.disabled = false
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
   }, 3000)
 
   msgError.setAttribute("style", "display: none")
@@ -229,15 +232,15 @@ function consultarDepartamento() {
       phoneDepartment.value = departamentoConsultado.phoneDepartmentCad
       emailDepartment.value = departamentoConsultado.emailDepartmentCad
       description.value = departamentoConsultado.descriptionCad
-    } else {
-      // cadastro incorreto
-
-      msgError.setAttribute("style", "display: block")
-      msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
-
-      msgSucess.setAttribute("style", "display: none")
-      msgSucess.innerHTML = ""
     }
+  } else {
+    // cadastro incorreto
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
   }
 }
 
@@ -259,6 +262,10 @@ function alterarDepartamento() {
     // Aqui você pode alterar os dados do departamento
     departmentEdit[indexDepartamento].departmentCad = department.value
     departmentEdit[indexDepartamento].responsibleCad = responsible.value
+    departmentEdit[indexDepartamento].idDepartmentCad = idDepartment.value
+    departmentEdit[indexDepartamento].phoneDepartmentCad = phoneDepartment.value
+    departmentEdit[indexDepartamento].emailDepartmentCad = emailDepartment.value
+    departmentEdit[indexDepartamento].descriptionCad = description.value
 
     localStorage.setItem("listaDepartment", JSON.stringify(departmentEdit))
 
@@ -312,8 +319,8 @@ function excluirDepartamento() {
     localStorage.setItem("listaDepartment", JSON.stringify(departmentList))
 
     // Mensagem de sucesso ou outras ações após a exclusão
-    msgError.setAttribute("style", "display: block")
-    msgError.innerHTML = "<strong>Excluindo departamento...</strong>"
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Excluindo Departamento...</strong>"
   } else {
     // Mensagem se o departamento não for encontrado
     msgError.setAttribute("style", "display: block")
