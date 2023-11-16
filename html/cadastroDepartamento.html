@@ -37,46 +37,56 @@
             <legend>Cadastrar Departamento</legend>
 
             <div class="input-wrapper">
-              <label for="nameDepartment">Nome do Departamento</label>
-              <input type="text" id="nameDepartment" placeholder="Ex: TI" />
+              <label id="labelDepartament" for="Department"
+                >Nome do Departamento</label
+              >
+              <input type="text" id="Department" placeholder="Ex: TI" />
             </div>
 
             <div class="input-wrapper">
-              <label for="nameResponsible">Nome do Responsável</label>
+              <label id="labelResponsible" for="Responsible"
+                >Nome do Responsável</label
+              >
               <input
                 type="text"
-                id="nameResponsible"
+                id="Responsible"
                 placeholder="Ex: Jhuan Gomes"
               />
             </div>
 
             <div class="col-2">
               <div class="input-wrapper">
-                <label for="id">id</label>
-                <input type="number" id="id" placeholder="xxx" />
+                <label id="labelIdDepartament" for="id">id</label>
+                <input type="number" id="idDepartament" placeholder="xxx" />
               </div>
 
               <div class="input-wrapper">
-                <label for="phone">Telefone</label>
+                <label id="labelPhoneDepartament" for="phoneDepartament"
+                  >Telefone</label
+                >
                 <input
                   type="number"
-                  id="phone"
+                  id="phoneDepartament"
                   placeholder="(xx) x xxxx-xxxx"
                 />
               </div>
             </div>
 
             <div class="input-wrapper">
-              <label for="email">E-mail</label>
+              <label id="labelEmailDepartament" for="emailDepartament"
+                >E-mail</label
+              >
               <input
                 type="email"
-                id="email"
+                id="emailDepartament"
                 placeholder="exemplo@exemplo.com"
               />
             </div>
 
             <div class="input-wrapper">
-              <label for="description">Descrição de Departamento</label>
+              <label id="labelDescription" for="description"
+                >Descrição de Departamento</label
+              >
               <textarea
                 name="description"
                 id="description"
@@ -88,12 +98,14 @@
               class="submit"
               type="submit"
               value="Cadastrar"
-              onclick="logar(); return false"
+              onclick="cadastrarDepartamento()"
             />
           </fieldset>
         </form>
       </main>
     </div>
     <footer></footer>
+
+    <script src="../cadastroDepartamento.js"></script>
   </body>
 </html>
