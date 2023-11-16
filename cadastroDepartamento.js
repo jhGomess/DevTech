@@ -28,12 +28,12 @@ let msgSucess = document.getElementById("msgSucess")
 let registerDepartment = document.getElementById("createdDepartment")
 let consultDepartment = document.getElementById("consultDepartment")
 
-function performSearch() {
-  var searchTerm = document.getElementById("searchDepartament").value
-  // Aqui você pode adicionar a lógica para processar a pesquisa, por exemplo, redirecionar para uma página de resultados.
-  var searchInput = document.getElementById("searchDepartament")
-  searchInput.focus()
-}
+// function performSearch() {
+//   var searchInput = document.getElementById("searchDepartament").value
+//   // Aqui você pode adicionar a lógica para processar a pesquisa, por exemplo, redirecionar para uma página de resultados.
+//   var searchInput = document.getElementById("searchDepartament")
+//   searchInput.focus()
+// }
 
 department.addEventListener("keyup", () => {
   if (department.value.length == 0) {
@@ -189,6 +189,11 @@ function cadastrarDepartamento() {
 }
 
 function consultarDepartamento() {
+  let searchDepartment = document
+    .getElementById("searchDepartment")
+    .value.trim()
+    .toLowerCase()
+
   consultDepartment.disabled = true
 
   msgSucess.setAttribute("style", "display: block")
@@ -209,21 +214,36 @@ function consultarDepartamento() {
   let listaDepartment = JSON.parse(localStorage.getItem("listaDepartment"))
 
   if (listaDepartment && listaDepartment.length > 0) {
-    listaDepartment.forEach((lista) => {
-      department.value = `${lista.departmentCad}`
-      responsible.value = `${lista.responsibleCad}`
-      idDepartment.value = `${lista.idDepartmentCad}`
-      phoneDepartment.value = `${lista.phoneDepartmentCad}`
-      emailDepartment.value = `${lista.emailDepartmentCad}`
-      description.value = `${lista.descriptionCad}`
-    })
-  } else {
-    // cadastro incorreto
+    let departamentoConsultado = listaDepartment.find(
+      (departamento) =>
+        departamento.idDepartmentCad === searchDepartment ||
+        departamento.departmentCad.toLowerCase() === searchDepartment
+    )
 
-    msgError.setAttribute("style", "display: block")
-    msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
+    if (departamentoConsultado) {
+      department.value = departamentoConsultado.departmentCad
+      responsible.value = departamentoConsultado.responsibleCad
+      idDepartment.value = departamentoConsultado.idDepartmentCad
+      phoneDepartment.value = departamentoConsultado.phoneDepartmentCad
+      emailDepartment.value = departamentoConsultado.emailDepartmentCad
+      description.value = departamentoConsultado.descriptionCad
+    } else {
+      // cadastro incorreto
 
-    msgSucess.setAttribute("style", "display: none")
-    msgSucess.innerHTML = ""
+      msgError.setAttribute("style", "display: block")
+      msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
+
+      msgSucess.setAttribute("style", "display: none")
+      msgSucess.innerHTML = ""
+    }
   }
 }
+
+// listaDepartment.forEach((lista) => {
+//   department.value = `${lista.departmentCad}`
+//   responsible.value = `${lista.responsibleCad}`
+//   idDepartment.value = `${lista.idDepartmentCad}`
+//   phoneDepartment.value = `${lista.phoneDepartmentCad}`
+//   emailDepartment.value = `${lista.emailDepartmentCad}`
+//   description.value = `${lista.descriptionCad}`
+// })
