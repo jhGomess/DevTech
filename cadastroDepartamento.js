@@ -196,29 +196,10 @@ function consultarDepartamento() {
     .value.trim()
     .toLowerCase()
 
-  consultDepartment.disabled = true
-
-  msgSucess.setAttribute("style", "display: block")
-  msgSucess.innerHTML = "<strong>Consultando Departamento...</strong>"
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  })
-
-  setTimeout(() => {
-    consultDepartment.disabled = false
-
-    msgSucess.setAttribute("style", "display: none")
-    msgSucess.innerHTML = ""
-  }, 3000)
-
-  msgError.setAttribute("style", "display: none")
-  msgError.innerHTML = ""
-
   let listaDepartment = JSON.parse(localStorage.getItem("listaDepartment"))
 
   if (listaDepartment && listaDepartment.length > 0) {
+    consultDepartment.disabled = true
     let departamentoConsultado = listaDepartment.find(
       (departamento) =>
         departamento.idDepartmentCad === searchDepartment ||
@@ -232,16 +213,67 @@ function consultarDepartamento() {
       phoneDepartment.value = departamentoConsultado.phoneDepartmentCad
       emailDepartment.value = departamentoConsultado.emailDepartmentCad
       description.value = departamentoConsultado.descriptionCad
+
+      msgSucess.setAttribute("style", "display: block")
+      msgSucess.innerHTML = "<strong>Consultando Departamento...</strong>"
+
+      msgError.setAttribute("style", "display: none")
+      msgError.innerHTML = ""
+
+      setTimeout(() => {
+        consultDepartment.disabled = false
+
+        msgSucess.setAttribute("style", "display: none")
+        msgSucess.innerHTML = ""
+
+        msgError.setAttribute("style", "display: none")
+        msgError.innerHTML = ""
+      }, 3000)
+    } else {
+      // cadastro incorreto
+      consultDepartment.disabled = true
+
+      msgError.setAttribute("style", "display: block")
+      msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
+
+      msgSucess.setAttribute("style", "display: none")
+      msgSucess.innerHTML = ""
+
+      setTimeout(() => {
+        consultDepartment.disabled = false
+
+        msgSucess.setAttribute("style", "display: none")
+        msgSucess.innerHTML = ""
+
+        msgError.setAttribute("style", "display: none")
+        msgError.innerHTML = ""
+      }, 3000)
     }
   } else {
     // cadastro incorreto
+    consultDepartment.disabled = true
 
     msgError.setAttribute("style", "display: block")
     msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
 
     msgSucess.setAttribute("style", "display: none")
     msgSucess.innerHTML = ""
+
+    setTimeout(() => {
+      consultDepartment.disabled = false
+
+      msgSucess.setAttribute("style", "display: none")
+      msgSucess.innerHTML = ""
+
+      msgError.setAttribute("style", "display: none")
+      msgError.innerHTML = ""
+    }, 3000)
   }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
 }
 
 function alterarDepartamento() {
@@ -274,16 +306,35 @@ function alterarDepartamento() {
     msgSucess.setAttribute("style", "display: block")
     msgSucess.innerHTML = "<strong>Alterando Dados do Departamento...</strong>"
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    })
-
     setTimeout(() => {
       alterDepartment.disabled = false
       location.reload()
     }, 3000)
+  } else {
+    // cadastro incorreto
+    alterDepartment.disabled = true
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Departamento não encontrada</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
+
+    setTimeout(() => {
+      alterDepartment.disabled = false
+
+      msgSucess.setAttribute("style", "display: none")
+      msgSucess.innerHTML = ""
+
+      msgError.setAttribute("style", "display: none")
+      msgError.innerHTML = ""
+    }, 3000)
   }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
 }
 
 function excluirDepartamento() {
@@ -303,6 +354,7 @@ function excluirDepartamento() {
     .getElementById("searchDepartment")
     .value.trim()
     .toLowerCase()
+
   let departmentList = JSON.parse(localStorage.getItem("listaDepartment")) || []
 
   let indexDepartamento = departmentList.findIndex(

@@ -285,14 +285,6 @@ function alterarEmpresa(
 
   alterCompany.disabled = true
 
-  // window.scrollTo(
-  //   {
-  //     top: 0,
-  //     behavior: "smooth",
-  //   },
-  //   1000
-  // )
-
   msgSucess.setAttribute("style", "display: block")
   msgSucess.innerHTML = "<strong>Alterando Dados da Empresa...</strong>"
 
