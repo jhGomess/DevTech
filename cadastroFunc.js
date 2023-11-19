@@ -327,3 +327,93 @@ health.addEventListener("keyup", () => {
     validHealth = true
   }
 })
+
+function cadastrarFunc() {
+  if (
+    validFunc &&
+    validIdFunc &&
+    validPhoneFunc &&
+    validCpf &&
+    validRg &&
+    validEmailFunc &&
+    validAddressFunc &&
+    validCityFunc &&
+    validStateFunc &&
+    validDepartmentFunc &&
+    validOffice &&
+    validBaseSalary &&
+    validDate_Ad &&
+    validDayWorked &&
+    validWorkedHours &&
+    validTransportation &&
+    validFood &&
+    validHealth
+  ) {
+    //implementando o localStorage se o cadastro foi sucesso, cadastro correto
+
+    let listaFunc = JSON.parse(localStorage.getItem("listaFunc") || "[]")
+
+    let newListaFunc = {
+      funcCad: func.value,
+      idFuncCad: idFunc.value,
+      phoneFuncCad: phoneFunc.value,
+      cpfCad: cpf.value,
+      rgCad: rg.value,
+      emailFuncCad: emailFunc.value,
+      addressFuncCad: addressFunc.value,
+      cityFuncCad: cityFunc.value,
+      stateFuncCad: stateFunc.value,
+      departmentFuncCad: departmentFunc.value,
+      officeCad: office.value,
+      baseSalaryCad: baseSalary.value,
+      date_AdCad: date_Ad.value,
+      dayWorkedCad: dayWorked.value,
+      workedHoursCad: workedHours.value,
+      transportationCad: transportation.value,
+      foodCad: food.value,
+      healthCad: health.value,
+    }
+
+    listaFunc.push(newListaFunc)
+
+    localStorage.setItem("listaFunc", JSON.stringify(listaFunc))
+
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Cadastrando Funcionário...</strong>"
+
+    msgError.setAttribute("style", "display: none")
+    msgError.innerHTML = ""
+
+    registerFunc.disabled = true
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Comportamento de rolagem suave
+    })
+
+    setTimeout(() => {
+      registerFunc.disabled = false
+      location.reload()
+    }, 3000)
+  } else {
+    // cadastro incorreto
+    registerFunc.disabled = true
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML =
+      "<strong>Preencha todos os campos corretamente</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+
+    setTimeout(() => {
+      registerFunc.disabled = false
+      location.reload()
+    }, 3000)
+  }
+}
