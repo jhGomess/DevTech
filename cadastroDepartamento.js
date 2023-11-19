@@ -82,7 +82,8 @@ idDepartment.addEventListener("keyup", () => {
 phoneDepartment.addEventListener("keyup", () => {
   if (phoneDepartment.value.length != 11) {
     labelPhoneDepartment.setAttribute("style", "color: red")
-    labelPhoneDepartment.innerHTML = "Telefone *Insira um telefone válido"
+    labelPhoneDepartment.innerHTML =
+      "Telefone *Insira um telefone válido com ddd"
     phoneDepartment.setAttribute("style", "outline:1px solid red")
     validPhoneDepartment = false
   } else {

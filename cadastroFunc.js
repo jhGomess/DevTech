@@ -74,3 +74,129 @@ let registerFunc = document.getElementById("registerFunc")
 let consultFunc = document.getElementById("consultFunc")
 let alterFunc = document.getElementById("alterFunc")
 let deleteFunc = document.getElementById("deleteFunc")
+
+func.addEventListener("keyup", () => {
+  if (func.value.length == 0) {
+    labelFunc.setAttribute("style", "color: red")
+    labelFunc.innerHTML = "Nome do Funcionário *Insira um nome"
+    func.setAttribute("style", "outline:1px solid red")
+    validFunc = false
+  } else {
+    labelFunc.setAttribute("style", "color: #c4c4cc")
+    labelFunc.innerHTML = "Nome do Funcionário"
+    func.setAttribute("style", "outline-color: 1px solid white")
+    validFunc = true
+  }
+})
+
+idFunc.addEventListener("keyup", () => {
+  if (idFunc.value.length === 0) {
+    labelIdFunc.setAttribute("style", "color: red")
+    labelIdFunc.innerHTML = "id *Insira um id válido"
+    idFunc.setAttribute("style", "outline:1px solid red")
+    validIdFunc = false
+  } else {
+    labelIdFunc.setAttribute("style", "color: #c4c4cc")
+    labelIdFunc.innerHTML = "id"
+    idFunc.setAttribute("style", "outline-color: 1px solid white")
+    validIdFunc = true
+  }
+})
+
+phoneFunc.addEventListener("keyup", () => {
+  if (phoneFunc.value.length != 11) {
+    labelPhoneFunc.setAttribute("style", "color: red")
+    labelPhoneFunc.innerHTML = "Telefone *Insira um telefone válido com ddd"
+    phoneFunc.setAttribute("style", "outline:1px solid red")
+    validPhoneFunc = false
+  } else {
+    labelPhoneFunc.setAttribute("style", "color: #c4c4cc")
+    labelPhoneFunc.innerHTML = "Telefone"
+    phoneFunc.setAttribute("style", "outline-color: 1px solid white")
+    validPhoneFunc = true
+  }
+})
+
+cpf.addEventListener("keyup", () => {
+  if (cpf.value.length != 14) {
+    labelCpf.setAttribute("style", "color: red")
+    labelCpf.innerHTML = "CPF *Insira um CPF válido"
+    cpf.setAttribute("style", "outline:1px solid red")
+    validCpf = false
+  } else {
+    labelCpf.setAttribute("style", "color: #c4c4cc")
+    labelCpf.innerHTML = "CPF"
+    cpf.setAttribute("style", "outline-color: 1px solid white")
+    validCpf = true
+  }
+})
+
+rg.addEventListener("keyup", () => {
+  if (rg.value.length != 12) {
+    labelRg.setAttribute("style", "color: red")
+    labelRg.innerHTML = "RG *Insira um RG válido"
+    rg.setAttribute("style", "outline:1px solid red")
+    validRg = false
+  } else {
+    labelRg.setAttribute("style", "color: #c4c4cc")
+    labelRg.innerHTML = "RG"
+    rg.setAttribute("style", "outline-color: 1px solid white")
+    validRg = true
+  }
+})
+
+emailFunc.addEventListener("keyup", () => {
+  if (emailFunc.value.length <= 1) {
+    labelEmailFunc.setAttribute("style", "color: red")
+    labelEmailFunc.innerHTML = "E-mail *Insira um e-mail válido"
+    emailFunc.setAttribute("style", "outline:1px solid red")
+    validEmailFunc = false
+  } else {
+    labelEmailFunc.setAttribute("style", "color: #c4c4cc")
+    labelEmailFunc.innerHTML = "E-mail"
+    emailFunc.setAttribute("style", "outline-color: 1px solid white")
+    validEmailFunc = true
+  }
+})
+
+addressFunc.addEventListener("keyup", () => {
+  if (addressFunc.value.length <= 1) {
+    labelAddressFunc.setAttribute("style", "color: red")
+    labelAddressFunc.innerHTML = "Endereço *Insira um endereço válido"
+    addressFunc.setAttribute("style", "outline:1px solid red")
+    validAddressFunc = false
+  } else {
+    labelAddressFunc.setAttribute("style", "color: #c4c4cc")
+    labelAddressFunc.innerHTML = "Endereço"
+    addressFunc.setAttribute("style", "outline-color: 1px solid white")
+    validAddressFunc = true
+  }
+})
+
+cityFunc.addEventListener("keyup", () => {
+  if (cityFunc.value.length <= 1) {
+    labelCityFunc.setAttribute("style", "color: red")
+    labelCityFunc.innerHTML = "Cidade *Insira uma cidade válido"
+    cityFunc.setAttribute("style", "outline:1px solid red")
+    validCityFunc = false
+  } else {
+    labelCityFunc.setAttribute("style", "color: #c4c4cc")
+    labelCityFunc.innerHTML = "Cidade"
+    cityFunc.setAttribute("style", "outline-color: 1px solid white")
+    validCityFunc = true
+  }
+})
+
+stateFunc.addEventListener("keyup", () => {
+  if (stateFunc.value.length <= 1) {
+    labelStateFunc.setAttribute("style", "color: red")
+    labelStateFunc.innerHTML = "Estado *Insira uma Estado válido"
+    stateFunc.setAttribute("style", "outline:1px solid red")
+    validStateFunc = false
+  } else {
+    labelStateFunc.setAttribute("style", "color: #c4c4cc")
+    labelStateFunc.innerHTML = "Estado"
+    stateFunc.setAttribute("style", "outline-color: 1px solid white")
+    validStateFunc = true
+  }
+})
