@@ -200,3 +200,130 @@ stateFunc.addEventListener("keyup", () => {
     validStateFunc = true
   }
 })
+
+departmentFunc.addEventListener("keyup", () => {
+  if (departmentFunc.value.length <= 1) {
+    labelDepartmentFunc.setAttribute("style", "color: red")
+    labelDepartmentFunc.innerHTML =
+      "Departamento *Insira um departamento válido"
+    departmentFunc.setAttribute("style", "outline:1px solid red")
+    validDepartmentFunc = false
+  } else {
+    labelDepartmentFunc.setAttribute("style", "color: #c4c4cc")
+    labelDepartmentFunc.innerHTML = "Departamento"
+    departmentFunc.setAttribute("style", "outline-color: 1px solid white")
+    validDepartmentFunc = true
+  }
+})
+
+office.addEventListener("keyup", () => {
+  if (office.value.length <= 1) {
+    labelOffice.setAttribute("style", "color: red")
+    labelOffice.innerHTML = "Cargo *Insira um cargo válido"
+    office.setAttribute("style", "outline:1px solid red")
+    validOffice = false
+  } else {
+    labelOffice.setAttribute("style", "color: #c4c4cc")
+    labelOffice.innerHTML = "Cargo"
+    office.setAttribute("style", "outline-color: 1px solid white")
+    validOffice = true
+  }
+})
+
+baseSalary.addEventListener("keyup", () => {
+  if (baseSalary.value.length < 1) {
+    labelBaseSalary.setAttribute("style", "color: red")
+    labelBaseSalary.innerHTML = "Salário Base *Insira um salário"
+    baseSalary.setAttribute("style", "outline:1px solid red")
+    validBaseSalary = false
+  } else {
+    labelBaseSalary.setAttribute("style", "color: #c4c4cc")
+    labelBaseSalary.innerHTML = "Salário Base"
+    baseSalary.setAttribute("style", "outline-color: 1px solid white")
+    validBaseSalary = true
+  }
+})
+
+date_Ad.addEventListener("keyup", () => {
+  if (date_Ad.value.length == 0) {
+    labelDate_Ad.setAttribute("style", "color: red")
+    labelDate_Ad.innerHTML = "Data Admissão *Insira uma data"
+    date_Ad.setAttribute("style", "outline:1px solid red")
+    validDate_Ad = false
+  } else {
+    labelDate_Ad.setAttribute("style", "color: #c4c4cc")
+    labelDate_Ad.innerHTML = "Data Admissão"
+    date_Ad.setAttribute("style", "outline-color: 1px solid white")
+    validDate_Ad = true
+  }
+})
+
+dayWorked.addEventListener("keyup", () => {
+  if (dayWorked.value.length < 1) {
+    labelDayWorked.setAttribute("style", "color: red")
+    labelDayWorked.innerHTML = "Dias Trabalhados *Insira os dias"
+    dayWorked.setAttribute("style", "outline:1px solid red")
+    validDayWorked = false
+  } else {
+    labelDayWorked.setAttribute("style", "color: #c4c4cc")
+    labelDayWorked.innerHTML = "Dias Trabalhados"
+    dayWorked.setAttribute("style", "outline-color: 1px solid white")
+    validDayWorked = true
+  }
+})
+
+workedHours.addEventListener("keyup", () => {
+  if (workedHours.value.length < 1) {
+    labelWorkedHours.setAttribute("style", "color: red")
+    labelWorkedHours.innerHTML = "Horas por dia *Insira as horas"
+    workedHours.setAttribute("style", "outline:1px solid red")
+    validWorkedHours = false
+  } else {
+    labelWorkedHours.setAttribute("style", "color: #c4c4cc")
+    labelWorkedHours.innerHTML = "Horas por dia"
+    workedHours.setAttribute("style", "outline-color: 1px solid white")
+    validWorkedHours = true
+  }
+})
+
+transportation.addEventListener("keyup", () => {
+  if (transportation.value.length < 1) {
+    labelTransportation.setAttribute("style", "color: red")
+    labelTransportation.innerHTML = "Vale Transporte *Insira o vale"
+    transportation.setAttribute("style", "outline:1px solid red")
+    validTransportation = false
+  } else {
+    labelTransportation.setAttribute("style", "color: #c4c4cc")
+    labelTransportation.innerHTML = "Vale Transporte"
+    transportation.setAttribute("style", "outline-color: 1px solid white")
+    validTransportation = true
+  }
+})
+
+food.addEventListener("keyup", () => {
+  if (food.value.length < 1) {
+    labelFood.setAttribute("style", "color: red")
+    labelFood.innerHTML = "Vale Alimentação *Insira o vale"
+    food.setAttribute("style", "outline:1px solid red")
+    validFood = false
+  } else {
+    labelFood.setAttribute("style", "color: #c4c4cc")
+    labelFood.innerHTML = "Vale Alimentação"
+    food.setAttribute("style", "outline-color: 1px solid white")
+    validFood = true
+  }
+})
+
+health.addEventListener("keyup", () => {
+  if (health.value.length < 1) {
+    labelHealth.setAttribute("style", "color: red")
+    labelHealth.innerHTML = "Plano de Saúde *Insira o plano de saúde"
+    health.setAttribute("style", "outline:1px solid red")
+    validHealth = false
+  } else {
+    labelHealth.setAttribute("style", "color: #c4c4cc")
+    labelHealth.innerHTML = "Plano de Saúde"
+    health.setAttribute("style", "outline-color: 1px solid white")
+    validHealth = true
+  }
+})
