@@ -75,6 +75,9 @@ let consultFunc = document.getElementById("consultFunc")
 let alterFunc = document.getElementById("alterFunc")
 let deleteFunc = document.getElementById("deleteFunc")
 
+let msgError = document.getElementById("msgError")
+let msgSucess = document.getElementById("msgSucess")
+
 func.addEventListener("keyup", () => {
   if (func.value.length == 0) {
     labelFunc.setAttribute("style", "color: red")
@@ -416,4 +419,102 @@ function cadastrarFunc() {
       location.reload()
     }, 3000)
   }
+}
+
+function consultarFunc() {
+  let searchFunc = document
+    .getElementById("searchFunc")
+    .value.trim()
+    .toLowerCase()
+
+  let listaFunc = JSON.parse(localStorage.getItem("listaFunc"))
+
+  if (listaFunc && listaFunc.length > 0) {
+    consultFunc.disabled = true
+    let funcConsultado = listaFunc.find(
+      (funcionario) =>
+        funcionario.idFuncCad === searchFunc ||
+        funcionario.funcCad.toLowerCase() === searchFunc
+    )
+
+    if (funcConsultado) {
+      func.value = funcConsultado.funcCad
+      idFunc.value = funcConsultado.idFuncCad
+      phoneFunc.value = funcConsultado.phoneFuncCad
+      cpf.value = funcConsultado.cpfCad
+      rg.value = funcConsultado.rgCad
+      emailFunc.value = funcConsultado.emailFuncCad
+      addressFunc.value = funcConsultado.addressFuncCad
+      cityFunc.value = funcConsultado.cityFuncCad
+      stateFunc.value = funcConsultado.stateFuncCad
+      departmentFunc.value = funcConsultado.departmentFuncCad
+      office.value = funcConsultado.officeCad
+      baseSalary.value = funcConsultado.baseSalaryCad
+      date_Ad.value = funcConsultado.date_AdCad
+      dayWorked.value = funcConsultado.dayWorkedCad
+      workedHours.value = funcConsultado.workedHoursCad
+      transportation.value = funcConsultado.transportationCad
+      food.value = funcConsultado.foodCad
+      health.value = funcConsultado.healthCad
+
+      msgSucess.setAttribute("style", "display: block")
+      msgSucess.innerHTML = "<strong>Consultando Funcionário...</strong>"
+
+      msgError.setAttribute("style", "display: none")
+      msgError.innerHTML = ""
+
+      setTimeout(() => {
+        consultFunc.disabled = false
+
+        msgSucess.setAttribute("style", "display: none")
+        msgSucess.innerHTML = ""
+
+        msgError.setAttribute("style", "display: none")
+        msgError.innerHTML = ""
+      }, 3000)
+    } else {
+      // cadastro incorreto
+      consultFunc.disabled = true
+
+      msgError.setAttribute("style", "display: block")
+      msgError.innerHTML = "<strong>Funcionário não encontrada</strong>"
+
+      msgSucess.setAttribute("style", "display: none")
+      msgSucess.innerHTML = ""
+
+      setTimeout(() => {
+        consultFunc.disabled = false
+
+        msgSucess.setAttribute("style", "display: none")
+        msgSucess.innerHTML = ""
+
+        msgError.setAttribute("style", "display: none")
+        msgError.innerHTML = ""
+      }, 3000)
+    }
+  } else {
+    // cadastro incorreto
+    consultFunc.disabled = true
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Funcionário não encontrada</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
+
+    setTimeout(() => {
+      consultFunc.disabled = false
+
+      msgSucess.setAttribute("style", "display: none")
+      msgSucess.innerHTML = ""
+
+      msgError.setAttribute("style", "display: none")
+      msgError.innerHTML = ""
+    }, 3000)
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
 }
