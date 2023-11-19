@@ -41,24 +41,20 @@
               <legend>Dados Pessoais</legend>
 
               <div class="input-wrapper">
-                <label for="nameEmployee">Nome do Funcionário</label>
-                <input
-                  type="text"
-                  id="nameEmployee"
-                  placeholder="Ex: Jhuan Gomes"
-                />
+                <label id="labelFunc" for="func">Nome do Funcionário</label>
+                <input type="text" id="func" placeholder="Ex: Jhuan Gomes" />
               </div>
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="id">id</label>
-                  <input type="number" id="id" placeholder="xxx" />
+                  <label id="labelIdFunc" for="idFunc">id</label>
+                  <input type="number" id="idFunc" placeholder="xxx" />
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="phone">Telefone</label>
+                  <label id="labelPhoneFunc" for="phoneFunc">Telefone</label>
                   <input
                     type="number"
-                    id="phone"
+                    id="phoneFunc"
                     placeholder="(xx) x xxxx-xxxx"
                   />
                 </div>
@@ -66,43 +62,47 @@
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="cpf">CPF</label>
+                  <label id="labelCpf" for="cpf">CPF</label>
                   <input type="text" id="cpf" placeholder="xxx.xxx.xxx-xx" />
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="rg">RG</label>
+                  <label id="labelRg" for="rg">RG</label>
                   <input type="text" id="rg" placeholder="xx.xxx.xxx-x" />
                 </div>
               </div>
 
               <div class="input-wrapper">
-                <label for="email">E-mail</label>
+                <label id="labelEmailFunc" for="emailFunc">E-mail</label>
                 <input
                   type="email"
-                  id="email"
+                  id="emailFunc"
                   placeholder="exemplo@exemplo.com"
                 />
               </div>
 
               <div class="input-wrapper">
-                <label for="address">Endereço</label>
+                <label id="labelAddressFunc" for="addressFunc">Endereço</label>
                 <input
                   type="text"
-                  id="address"
+                  id="addressFunc"
                   placeholder="rua exemplo, 000"
                 />
               </div>
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="city">Cidade</label>
-                  <input type="text" id="city" placeholder="Ex: São Paulo" />
+                  <label id="labelCityFunc" for="cityFunc">Cidade</label>
+                  <input
+                    type="text"
+                    id="cityFunc"
+                    placeholder="Ex: São Paulo"
+                  />
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="state">Estado</label>
-                  <input type="text" id="state" placeholder="Ex: SP" />
+                  <label id="labelStateFunc" for="stateFunc">Estado</label>
+                  <input type="text" id="stateFunc" placeholder="Ex: SP" />
                 </div>
               </div>
             </div>
@@ -113,16 +113,14 @@
               <legend>Dados Profissionais</legend>
 
               <div class="input-wrapper">
-                <label for="departamentEmployee">Departamento</label>
-                <input
-                  type="text"
-                  id="departamentEmployee"
-                  placeholder="Ex: TI"
-                />
+                <label id="labelDepartmentFunc" for="departmentFunc"
+                  >Departamento</label
+                >
+                <input type="text" id="departmentFunc" placeholder="Ex: TI" />
               </div>
 
               <div class="input-wrapper">
-                <label for="office">Cargo</label>
+                <label id="labelOffice" for="office">Cargo</label>
                 <input
                   type="text"
                   id="office"
@@ -132,19 +130,23 @@
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="baseSalary">Salário Base</label>
+                  <label id="labelBaseSalary" for="baseSalary"
+                    >Salário Base</label
+                  >
                   <input type="number" id="baseSalary" placeholder="R$ 00,00" />
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="date_Ad">Data Admissão</label>
+                  <label id="labelDate_Ad" for="date_Ad">Data Admissão</label>
                   <input type="date" id="date_Ad" placeholder="" />
                 </div>
               </div>
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="dayWorked">Dias Trabalhados</label>
+                  <label id="labelDayWorked" for="dayWorked"
+                    >Dias Trabalhados</label
+                  >
                   <input
                     type="number"
                     id="dayWorked"
@@ -153,29 +155,33 @@
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="workedHours">Horas por dia</label>
+                  <label id="labelWorkedHours" for="workedHours"
+                    >Horas por dia</label
+                  >
 
                   <input type="time" id="workedHours" />
                 </div>
               </div>
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="transportation ">Vale Transporte</label>
+                  <label id="labelTransportation" for="transportation"
+                    >Vale Transporte</label
+                  >
                   <input
                     type="number"
-                    id="transportation "
+                    id="transportation"
                     placeholder="R% 00,00"
                   />
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="food">Vale Alimentação</label>
+                  <label id="labelFood" for="food">Vale Alimentação</label>
                   <input type="number" id="food" placeholder="R$ 00,00" />
                 </div>
               </div>
 
               <div class="input-wrapper">
-                <label for="health">Plano de Saúde</label>
+                <label id="labelHealth" for="health">Plano de Saúde</label>
                 <input type="number" id="health" placeholder="R$ 00,00" />
               </div>
 
@@ -183,7 +189,7 @@
                 class="submit"
                 type="submit"
                 value="Cadastrar"
-                onclick="logar(); return false"
+                onclick="cadastrarFunc()"
               />
             </div>
           </fieldset>
