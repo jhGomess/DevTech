@@ -591,3 +591,47 @@ function alterarFunc() {
     behavior: "smooth",
   })
 }
+
+function excluirFunc() {
+  deleteFunc.disabled = true
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+
+  setTimeout(() => {
+    deleteFunc.disabled = false
+    location.reload()
+  }, 3000)
+
+  let searchFunc = document
+    .getElementById("searchFunc")
+    .value.trim()
+    .toLowerCase()
+
+  let funcList = JSON.parse(localStorage.getItem("listaFunc")) || []
+
+  let indexFunc = funcList.findIndex(
+    (funcionario) =>
+      funcionario.idFuncCad === searchFunc ||
+      funcionario.funcCad.toLowerCase() === searchFunc
+  )
+
+  if (indexFunc !== -1) {
+    // Remove o departamento da lista pelo índice encontrado
+    funcList.splice(indexFunc, 1)
+
+    // Atualiza o localStorage sem o departamento excluído
+    localStorage.setItem("listaFunc", JSON.stringify(funcList))
+
+    // Mensagem de sucesso ou outras ações após a exclusão
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Excluindo Funcionário...</strong>"
+  } else {
+    // Mensagem se o departamento não for encontrado
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML =
+      "<strong>Funcionário não encontrado para exclusão</strong>"
+  }
+}
