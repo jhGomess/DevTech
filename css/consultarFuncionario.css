@@ -227,10 +227,26 @@ form button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 3rem;
+
+  margin-top: 2rem;
 }
 
 .yellow {
   background-color: #a8a610;
+  width: 100%;
+  padding: 12px 32px;
+
+  border: none;
+  border-radius: 0.8rem;
+
+  color: white;
+
+  transition: background-color 200ms;
+
+  margin: 1rem 0rem 2rem;
+
+  cursor: pointer;
 }
 
 .yellow:hover {
@@ -239,6 +255,19 @@ form button {
 
 .red {
   background-color: #761f1f;
+  width: 100%;
+  padding: 12px 32px;
+
+  border: none;
+  border-radius: 0.8rem;
+
+  color: white;
+
+  transition: background-color 200ms;
+
+  margin: 1rem 0rem 2rem;
+
+  cursor: pointer;
 }
 
 .red:hover {

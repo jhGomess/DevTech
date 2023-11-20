@@ -518,3 +518,76 @@ function consultarFunc() {
     behavior: "smooth",
   })
 }
+
+function alterarFunc() {
+  let searchFunc = document
+    .getElementById("searchFunc")
+    .value.trim()
+    .toLowerCase()
+
+  let funcEdit = JSON.parse(localStorage.getItem("listaFunc"))
+
+  let indexFunc = funcEdit.findIndex(
+    (funcionario) =>
+      funcionario.idFuncCad === searchFunc ||
+      funcionario.funcCad.toLowerCase() === searchFunc
+  )
+
+  if (indexFunc !== -1) {
+    // Aqui você pode alterar os dados do departamento
+    funcEdit[indexFunc].funcCad = func.value
+    funcEdit[indexFunc].idFuncCad = idFunc.value
+    funcEdit[indexFunc].phoneFuncCad = phoneFunc.value
+    funcEdit[indexFunc].cpfCad = cpf.value
+    funcEdit[indexFunc].rgCad = rg.value
+    funcEdit[indexFunc].emailFuncCad = emailFunc.value
+    funcEdit[indexFunc].addressFuncCad = addressFunc.value
+    funcEdit[indexFunc].cityFuncCad = cityFunc.value
+    funcEdit[indexFunc].stateFuncCad = stateFunc.value
+    funcEdit[indexFunc].departmentFuncCad = departmentFunc.value
+    funcEdit[indexFunc].officeCad = office.value
+    funcEdit[indexFunc].baseSalaryCad = baseSalary.value
+    funcEdit[indexFunc].date_AdCad = date_Ad.value
+    funcEdit[indexFunc].dayWorkedCad = dayWorked.value
+    funcEdit[indexFunc].workedHoursCad = workedHours.value
+    funcEdit[indexFunc].transportationCad = transportation.value
+    funcEdit[indexFunc].foodCad = food.value
+    funcEdit[indexFunc].healthCad = health.value
+
+    localStorage.setItem("listaFunc", JSON.stringify(funcEdit))
+
+    alterFunc.disabled = true
+
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Alterando Dados do Funcionário...</strong>"
+
+    setTimeout(() => {
+      alterFunc.disabled = false
+      location.reload()
+    }, 3000)
+  } else {
+    // cadastro incorreto
+    alterFunc.disabled = true
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Funcionário não encontrada</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
+
+    setTimeout(() => {
+      alterFunc.disabled = false
+
+      msgSucess.setAttribute("style", "display: none")
+      msgSucess.innerHTML = ""
+
+      msgError.setAttribute("style", "display: none")
+      msgError.innerHTML = ""
+    }, 3000)
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+}
