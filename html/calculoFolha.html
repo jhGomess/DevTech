@@ -30,10 +30,13 @@
       </nav>
 
       <main>
+        <div id="msgError"></div>
+        <div id="msgSucess"></div>
+
         <a href="./menu.html"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
-        <form>
+        <form id="calcFolha">
           <fieldset class="teste">
             <legend>Calcular Folha de Pagamento</legend>
 
@@ -66,10 +69,11 @@
             </div>
 
             <input
+              id="process"
               class="submit"
               type="submit"
               value="Processar"
-              onclick="ProcessarFolha()"
+              onclick="processarFolha()"
             />
           </fieldset>
 
@@ -81,6 +85,25 @@
                 <label for="func">Nome do Funcionário</label>
                 <input type="text" id="func" placeholder="Ex: Jhuan Gomes" />
               </div>
+
+              <div class="col-2">
+                <div class="input-wrapper">
+                  <label id="labelDepartmentFunc" for="departmentFunc"
+                    >Departamento</label
+                  >
+                  <input type="text" id="departmentFunc" placeholder="Ex: TI" />
+                </div>
+
+                <div class="input-wrapper">
+                  <label id="labelOffice" for="office">Cargo</label>
+                  <input
+                    type="text"
+                    id="office"
+                    placeholder="Ex: analista junior"
+                  />
+                </div>
+              </div>
+
               <div class="col-2">
                 <div class="input-wrapper">
                   <label for="idFunc">id</label>
@@ -198,11 +221,13 @@
           </div>
         </form>
 
-        <button class="encerrarFolha">Encerrar Folha de Pagamento</button>
+        <button class="encerrarFolha" type="submit" form="calcFolha" id="close">
+          Encerrar Folha de Pagamento
+        </button>
       </main>
     </div>
     <footer></footer>
 
-    <script src="../javascript/consultarDepartamento.js"></script>
+    <script src="../calculoFolha.js"></script>
   </body>
 </html>
