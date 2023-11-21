@@ -68,17 +68,51 @@ function processarFolha() {
         funcionario.funcCad.toLowerCase() === searchFunc
     )
 
-    if (funcConsultado) {
+    let initialConsult = initial_dt.value != 0
+    let finalConsult = final_dt.value != 0
+
+    if (funcConsultado && initialConsult && finalConsult) {
       func.value = funcConsultado.funcCad
       idFunc.value = funcConsultado.idFuncCad
       departmentFunc.value = funcConsultado.departmentFuncCad
       office.value = funcConsultado.officeCad
-      baseSalary.value = funcConsultado.baseSalaryCad
+      baseSalary.value = "R$ " + funcConsultado.baseSalaryCad
       dayWorked.value = funcConsultado.dayWorkedCad
-      workedHours.value = funcConsultado.workedHoursCad
-      transportation.value = funcConsultado.transportationCad
-      food.value = funcConsultado.foodCad
-      health.value = funcConsultado.healthCad
+      workedHours.value = funcConsultado.workedHoursCad * dayWorked.value
+      transportation.value = "R$ " + funcConsultado.transportationCad
+      food.value = "R$ " + funcConsultado.foodCad
+      health.value = "R$ " + funcConsultado.healthCad
+
+      const percentualINSS = 0.08
+      const percentualFGTS = 0.11
+      const percentualIRRF = 0.15
+
+      const descontoINSS =
+        parseFloat(baseSalary.value.replace("R$ ", "")) * percentualINSS
+      const descontoFGTS =
+        parseFloat(baseSalary.value.replace("R$ ", "")) * percentualFGTS
+
+      let descontoIRRF = 0
+      // Implementação básica do desconto do IRRF, considere melhorias de acordo com a legislação vigente
+      if (parseFloat(baseSalary.value.replace("R$ ", "")) > 2000) {
+        descontoIRRF =
+          parseFloat(baseSalary.value.replace("R$ ", "")) * percentualIRRF
+      }
+
+      salarioLiquido =
+        parseFloat(baseSalary.value.replace("R$ ", "")) +
+        parseFloat(transportation.value.replace("R$ ", "")) +
+        parseFloat(food.value.replace("R$ ", "")) +
+        parseFloat(health.value.replace("R$ ", "")) -
+        descontoINSS -
+        descontoFGTS -
+        descontoIRRF
+
+      inss.value = "R$ " + descontoINSS + ",00"
+      fgts.value = "R$ " + descontoFGTS + ",00"
+      irrf.value = "R$ " + descontoIRRF + ",00"
+
+      netSalary.value = "R$ " + salarioLiquido.toFixed(2)
 
       msgSucess.setAttribute("style", "display: block")
       msgSucess.innerHTML = "<strong>Processando Folha de Pagamento...</strong>"
@@ -100,7 +134,8 @@ function processarFolha() {
       process.disabled = true
 
       msgError.setAttribute("style", "display: block")
-      msgError.innerHTML = "<strong>Funcionário não encontrada</strong>"
+      msgError.innerHTML =
+        "<strong>Erro ao processar Folha de Pagamento</strong>"
 
       msgSucess.setAttribute("style", "display: none")
       msgSucess.innerHTML = ""
@@ -120,7 +155,7 @@ function processarFolha() {
     process.disabled = true
 
     msgError.setAttribute("style", "display: block")
-    msgError.innerHTML = "<strong>Funcionário não encontrada</strong>"
+    msgError.innerHTML = "<strong>Erro ao processar Folha de Pagamento</strong>"
 
     msgSucess.setAttribute("style", "display: none")
     msgSucess.innerHTML = ""
