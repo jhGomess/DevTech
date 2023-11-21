@@ -36,6 +36,7 @@
         <form>
           <fieldset class="teste">
             <legend>Calcular Folha de Pagamento</legend>
+
             <div class="input-wrapper">
               <img
                 class="lupa"
@@ -46,23 +47,8 @@
 
               <input
                 type="search"
-                name="searchDepartament"
-                id="searchDepartament"
-                placeholder="Busque o departamento pelo nome ou id"
-              />
-            </div>
-            <div class="input-wrapper">
-              <img
-                class="lupa"
-                src="../assets/search.svg"
-                alt=""
-                onclick="performSearch()"
-              />
-
-              <input
-                type="search"
-                name="searchDepartament"
-                id="searchDepartament"
+                name="searchFunc"
+                id="searchFunc"
                 placeholder="Busque o funcionário pelo nome ou id"
               />
             </div>
@@ -83,7 +69,7 @@
               class="submit"
               type="submit"
               value="Processar"
-              onclick="logar(); return false"
+              onclick="ProcessarFolha()"
             />
           </fieldset>
 
@@ -92,17 +78,13 @@
               <legend>Dados da Folha de Pagamento</legend>
 
               <div class="input-wrapper">
-                <label for="nameEmployee">Nome do Funcionário</label>
-                <input
-                  type="text"
-                  id="nameEmployee"
-                  placeholder="Ex: Jhuan Gomes"
-                />
+                <label for="func">Nome do Funcionário</label>
+                <input type="text" id="func" placeholder="Ex: Jhuan Gomes" />
               </div>
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="id">id</label>
-                  <input type="number" id="id" placeholder="xxx" />
+                  <label for="idFunc">id</label>
+                  <input type="number" id="idFunc" placeholder="xxx" />
                 </div>
 
                 <div class="input-wrapper">
@@ -134,10 +116,10 @@
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="transportation ">Vale Transporte</label>
+                  <label for="transportation">Vale Transporte</label>
                   <input
                     type="number"
-                    id="transportation "
+                    id="transportation"
                     placeholder="R$ 00,00"
                   />
                 </div>
@@ -161,20 +143,20 @@
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="INSS">INSS</label>
-                  <input type="number" id="INSS" placeholder="R$ 00,00" />
+                  <label for="inss">INSS</label>
+                  <input type="number" id="inss" placeholder="R$ 00,00" />
                 </div>
 
                 <div class="input-wrapper">
-                  <label for="FGTS">FGTS</label>
-                  <input type="number" id="FGTS" placeholder="R$ 00,00" />
+                  <label for="fgts">FGTS</label>
+                  <input type="number" id="fgts" placeholder="R$ 00,00" />
                 </div>
               </div>
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label for="IRRF">IRRF</label>
-                  <input type="number" id="IRRF" placeholder="R$ 00,00" />
+                  <label for="irrf">IRRF</label>
+                  <input type="number" id="irrf" placeholder="R$ 00,00" />
                 </div>
 
                 <div class="input-wrapper">
