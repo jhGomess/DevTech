@@ -7,6 +7,12 @@ let close = document.getElementById("close")
 let func = document.getElementById("func")
 let validFunc = false
 
+let departmentFunc = document.getElementById("departmentFunc")
+let validDepartmentFunc = false
+
+let office = document.getElementById("office")
+let validOffice = false
+
 let idFunc = document.getElementById("idFunc")
 let validIdFunc = false
 
@@ -52,6 +58,8 @@ let validNetSalary = false
 let msgError = document.getElementById("msgError")
 let msgSucess = document.getElementById("msgSucess")
 
+let dadosProcessados = {}
+
 function processarFolha() {
   let searchFunc = document
     .getElementById("searchFunc")
@@ -81,29 +89,33 @@ function processarFolha() {
       workedHours.value = funcConsultado.workedHoursCad * dayWorked.value
       transportation.value = "R$ " + funcConsultado.transportationCad
       food.value = "R$ " + funcConsultado.foodCad
-      health.value = "R$ " + funcConsultado.healthCad
+      health.value = funcConsultado.healthCad
+
+      const baseSalaryValue = parseFloat(
+        funcConsultado.baseSalaryCad.replace("R$ ", "")
+      )
+      const transportationValue = parseFloat(
+        funcConsultado.transportationCad.replace("R$ ", "")
+      )
+      const foodValue = parseFloat(funcConsultado.foodCad.replace("R$ ", ""))
 
       const percentualINSS = 0.08
       const percentualFGTS = 0.11
       const percentualIRRF = 0.15
 
-      const descontoINSS =
-        parseFloat(baseSalary.value.replace("R$ ", "")) * percentualINSS
-      const descontoFGTS =
-        parseFloat(baseSalary.value.replace("R$ ", "")) * percentualFGTS
+      const descontoINSS = baseSalaryValue * percentualINSS
+      const descontoFGTS = baseSalaryValue * percentualFGTS
 
       let descontoIRRF = 0
       // Implementação básica do desconto do IRRF, considere melhorias de acordo com a legislação vigente
-      if (parseFloat(baseSalary.value.replace("R$ ", "")) > 2000) {
-        descontoIRRF =
-          parseFloat(baseSalary.value.replace("R$ ", "")) * percentualIRRF
+      if (baseSalaryValue > 2000) {
+        descontoIRRF = baseSalaryValue * percentualIRRF
       }
 
       salarioLiquido =
-        parseFloat(baseSalary.value.replace("R$ ", "")) +
-        parseFloat(transportation.value.replace("R$ ", "")) +
-        parseFloat(food.value.replace("R$ ", "")) +
-        parseFloat(health.value.replace("R$ ", "")) -
+        baseSalaryValue +
+        transportationValue +
+        foodValue -
         descontoINSS -
         descontoFGTS -
         descontoIRRF
@@ -129,6 +141,22 @@ function processarFolha() {
         msgError.setAttribute("style", "display: none")
         msgError.innerHTML = ""
       }, 3000)
+
+      dadosProcessados = {
+        funcCad: func.value,
+        idFuncCad: idFunc.value,
+        departmentFuncCad: departmentFunc.value,
+        officeCad: office.value,
+        baseSalaryCad: baseSalary.value,
+        dayWorkedCad: dayWorked.value,
+        workedHoursCad: workedHours.value,
+        transportationCad: transportation.value,
+        foodCad: food.value,
+        inssCad: inss.value,
+        fgtsCad: fgts.value,
+        irrfCad: irrf.value,
+        netSalaryCad: netSalary.value,
+      }
     } else {
       // cadastro incorreto
       process.disabled = true
@@ -175,4 +203,69 @@ function processarFolha() {
     top: 0,
     behavior: "smooth",
   })
+}
+
+function encerrarFolha() {
+  if (Object.keys(dadosProcessados).length > 0) {
+    //implementando o localStorage se o cadastro foi sucesso, cadastro correto
+
+    let listaCalc = JSON.parse(localStorage.getItem("listaCalc") || "[]")
+
+    // let newListaCalc = {
+    //   funcCad: func.value,
+    //   idFuncCad: idFunc.value,
+    //   departmentFuncCad: departmentFunc.value,
+    //   officeCad: office.value,
+    //   baseSalaryCad: baseSalary.value,
+    //   dayWorkedCad: dayWorked.value,
+    //   workedHoursCad: workedHours.value,
+    //   transportationCad: transportation.value,
+    //   foodCad: food.value,
+    //   inssCad: inss.value,
+    //   fgtsCad: fgts.value,
+    //   irrfCad: irrf.value,
+    //   netSalaryCad: netSalary.value,
+    // }
+
+    listaCalc.push(dadosProcessados)
+
+    localStorage.setItem("listaCalc", JSON.stringify(listaCalc))
+
+    msgSucess.setAttribute("style", "display: block")
+    msgSucess.innerHTML = "<strong>Encerrando Folha de Pagamento...</strong>"
+
+    msgError.setAttribute("style", "display: none")
+    msgError.innerHTML = ""
+
+    close.disabled = true
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Comportamento de rolagem suave
+    })
+
+    setTimeout(() => {
+      close.disabled = false
+      location.reload()
+    }, 3000)
+  } else {
+    // cadastro incorreto
+    close.disabled = true
+
+    msgError.setAttribute("style", "display: block")
+    msgError.innerHTML = "<strong>Erro ao encerrar Folha de Pagamento</strong>"
+
+    msgSucess.setAttribute("style", "display: none")
+    msgSucess.innerHTML = ""
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+
+    setTimeout(() => {
+      close.disabled = false
+      location.reload()
+    }, 3000)
+  }
 }
