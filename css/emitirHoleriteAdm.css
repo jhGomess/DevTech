@@ -53,7 +53,7 @@ body::before {
 }
 
 .page {
-  max-width: 42.5rem;
+  max-width: 110rem;
   margin: 0px auto;
   padding: 0rem 1.6rem;
 }
@@ -106,6 +106,7 @@ nav {
 
 main {
   margin: 3.6rem auto;
+  max-width: 110rem;
 }
 
 main a {
@@ -126,8 +127,11 @@ main a:hover {
 
 form {
   margin: 3rem 0rem 0rem;
+}
 
-  max-width: 42.5rem;
+form.holerite {
+  border: 1px solid white;
+  padding: 2rem;
 }
 
 .border {
@@ -155,6 +159,12 @@ form fieldset legend {
   border-bottom: 1px solid var(--select-color);
 }
 
+.second legend {
+  padding-top: 2rem;
+  border-top: 1px solid var(--select-color);
+  border-bottom: none;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
@@ -164,16 +174,30 @@ form fieldset legend {
   width: 100%;
 }
 
+.input-wrapper-hol {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  position: relative;
+  width: 40%;
+}
+
 .lupa {
   position: absolute;
   right: 1.6rem;
-  top: 25%;
+  top: 52%;
 
   cursor: pointer;
 }
 
 .input-wrapper label {
   color: var(--text-color);
+}
+
+.input-wrapper-hol label {
+  color: var(--text-color);
+  font-weight: 700;
 }
 
 .input-wrapper input {
@@ -188,15 +212,106 @@ form fieldset legend {
   width: 100%;
 }
 
-.col-2,
+.input-wrapper-hol input {
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 0.8rem;
+  /* padding: 1.2rem 2rem; */
+  color: var(--text-color);
+
+  line-height: 2.6rem;
+
+  width: 50%;
+}
+
 .col-date {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
 }
 
+.col-hol {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.initial_dt,
+.final_dt {
+  width: 50%;
+}
+
+.city,
+.state {
+  margin-left: -5rem;
+}
+
+.p-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 7rem;
+
+  padding: 2rem;
+  width: 60rem;
+  background-color: var(--bg-input);
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+
+  margin: 0 auto;
+}
+
+.p-wrapper p {
+  font-weight: 700;
+}
+
+.firstP {
+  margin-right: 10rem;
+}
+
+.dados {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: -1rem;
+}
+
+.input-wrapper-details {
+  display: flex;
+  align-items: center;
+
+  width: 60rem;
+
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+
+  margin: 0 auto;
+}
+
+.input-wrapper-details label {
+  border: 1px solid var(--text-color);
+  padding: 1rem;
+  width: 26rem;
+}
+
+.input-wrapper-details input {
+  border: 1px solid var(--text-color);
+  padding: 1.2rem;
+  background-color: var(--bg-color);
+}
+
+.liquido {
+  margin-top: 6rem;
+}
+
+.teste {
+  margin-top: 8rem;
+}
+
+.numero {
+  margin-left: 90rem;
+  margin-top: -4rem;
+}
+
 form .submit {
-  width: 100%;
+  width: 50%;
   padding: 12px 32px;
   background-color: var(--submit-color);
   border: none;
@@ -206,74 +321,29 @@ form .submit {
 
   transition: background-color 200ms;
 
-  margin: 2rem 0rem 2rem;
+  margin: 2rem auto 2rem;
 
   cursor: pointer;
 }
 
-form .submit:hover {
-  background-color: var(--submit-hover-color);
-}
-
-form button {
+.baixar {
   padding: 1.2rem 0rem;
-  width: 40%;
+  width: 20rem;
   border: none;
   border-radius: 0.8rem;
   color: white;
+  background-color: var(--bg-input);
 
-  margin-top: 4rem;
+  margin: 2rem 0rem 20rem 100rem;
 
   font-weight: 500;
 
   cursor: pointer;
 }
 
-.button-2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.yellow {
-  background-color: #a8a610;
-}
-
-.yellow:hover {
-  background-color: #c9c612;
-}
-
-.green {
-  background-color: var(--submit-color);
-}
-
-.green:hover {
-  background-color: var(--submit-hover-color);
-}
-
-.encerrarFolha {
-  width: 100%;
-  padding: 2rem 1.2rem;
-  background-color: rgb(252, 168, 168);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid red;
-  border-radius: 0rem 0rem 0.4rem 0.4rem;
-
-  color: #e21717;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-
-  transition: background 300ms, color 300ms, border 300ms;
-}
-
-.encerrarFolha:hover {
-  border: 1.5px solid green;
-  background-color: rgb(151, 253, 138);
-  color: green;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+.baixar:hover {
+  background-color: var(--bg-before);
+  border: 1px solid white;
 }
 
 footer {
