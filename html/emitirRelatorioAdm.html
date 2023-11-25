@@ -44,23 +44,6 @@
           <fieldset>
             <legend>Emitir Relatório</legend>
             <div class="col-date">
-              <div class="input-wrapper">
-                <img
-                  class="lupa"
-                  src="../assets/search.svg"
-                  alt=""
-                  onclick="performSearch()"
-                />
-
-                <label for="searchFunc">Funcionário</label>
-                <input
-                  type="search"
-                  name="searchFunc"
-                  id="searchFunc"
-                  placeholder="Busque o funcionário pelo nome ou id"
-                />
-              </div>
-
               <div class="input-wrapper initial_dt">
                 <label for="initial_dt">Data Inicial</label>
                 <input type="date" id="initial_dt" placeholder="" />
@@ -70,15 +53,15 @@
                 <label for="final_dt">Data Final</label>
                 <input type="date" id="final_dt" placeholder="" />
               </div>
-            </div>
 
-            <input
-              id="processHol"
-              class="submit"
-              type="submit"
-              value="PROCESSAR"
-              onclick="processarHolerite()"
-            />
+              <input
+                id="processRel"
+                class="submit"
+                type="submit"
+                value="PROCESSAR"
+                onclick="processarRelatorio()"
+              />
+            </div>
           </fieldset>
         </form>
 
@@ -111,23 +94,6 @@
               <div class="input-wrapper-hol state">
                 <label for="state">Estado :</label>
                 <input type="text" id="state" />
-              </div>
-            </div>
-
-            <div class="input-wrapper-hol">
-              <label for="departmentFunc">Departamento :</label>
-              <input type="text" id="departmentFunc" />
-            </div>
-
-            <div class="col-hol">
-              <div class="input-wrapper-hol">
-                <label for="func">Nome Funcionário :</label>
-                <input type="text" id="func" />
-              </div>
-
-              <div class="input-wrapper-hol">
-                <label for="idFunc">id :</label>
-                <input type="text" id="idFunc" />
               </div>
             </div>
 
@@ -173,39 +139,55 @@
               </div>
 
               <div class="input-wrapper-details">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc2"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func2" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary2" placeholder="R$ 00,00" />
+                <input type="text" id="salaries2" placeholder="R$ 00,00" />
+                <input type="text" id="discounts2" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary2" placeholder="R$ 00,00" />
               </div>
 
               <div class="input-wrapper-details">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc3"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func3" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary3" placeholder="R$ 00,00" />
+                <input type="text" id="salaries3" placeholder="R$ 00,00" />
+                <input type="text" id="discounts3" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary3" placeholder="R$ 00,00" />
               </div>
 
               <div class="input-wrapper-details">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc4"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func4" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary4" placeholder="R$ 00,00" />
+                <input type="text" id="salaries4" placeholder="R$ 00,00" />
+                <input type="text" id="discounts4" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary4" placeholder="R$ 00,00" />
               </div>
 
               <div class="input-wrapper-details">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc5"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func5" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary5" placeholder="R$ 00,00" />
+                <input type="text" id="salaries5" placeholder="R$ 00,00" />
+                <input type="text" id="discounts5" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary5" placeholder="R$ 00,00" />
               </div>
             </div>
           </fieldset>
@@ -233,58 +215,94 @@
 
             <div class="dados">
               <div class="input-wrapper-details-2">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc6"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func6" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary6" placeholder="R$ 00,00" />
+                <input type="text" id="transportation" placeholder="R$ 00,00" />
+                <input type="text" id="food" placeholder="R$ 00,00" />
+                <input type="text" id="inss" placeholder="R$ 00,00" />
+                <input type="text" id="fgts" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary6" placeholder="R$ 00,00" />
               </div>
 
               <div class="input-wrapper-details-2">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc7"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func7" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary7" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="transportation7"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="food7" placeholder="R$ 00,00" />
+                <input type="text" id="inss7" placeholder="R$ 00,00" />
+                <input type="text" id="fgts7" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary7" placeholder="R$ 00,00" />
               </div>
 
               <div class="input-wrapper-details-2">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc8"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func8" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary8" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="transportation8"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="food8" placeholder="R$ 00,00" />
+                <input type="text" id="inss8" placeholder="R$ 00,00" />
+                <input type="text" id="fgts8" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary8" placeholder="R$ 00,00" />
               </div>
 
               <div class="input-wrapper-details-2">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc9"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func9" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary9" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="transportation9"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="food9" placeholder="R$ 00,00" />
+                <input type="text" id="inss9" placeholder="R$ 00,00" />
+                <input type="text" id="fgts9" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary9" placeholder="R$ 00,00" />
               </div>
 
               <div class="input-wrapper-details-2">
-                <input type="text" id="departmentFunc" placeholder="R$ 00,00" />
-                <input type="text" id="func" placeholder="R$ 00,00" />
-                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
-                <input type="text" id="salaries" placeholder="R$ 00,00" />
-                <input type="text" id="discounts" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
-                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="departmentFunc10"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="func10" placeholder="R$ 00,00" />
+                <input type="text" id="baseSalary10" placeholder="R$ 00,00" />
+                <input
+                  type="text"
+                  id="transportation10"
+                  placeholder="R$ 00,00"
+                />
+                <input type="text" id="food10" placeholder="R$ 00,00" />
+                <input type="text" id="inss10" placeholder="R$ 00,00" />
+                <input type="text" id="fgts10" placeholder="R$ 00,00" />
+                <input type="text" id="netSalary10" placeholder="R$ 00,00" />
               </div>
             </div>
           </fieldset>
