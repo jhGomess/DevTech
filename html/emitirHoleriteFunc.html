@@ -13,6 +13,15 @@
 
     <link rel="stylesheet" href="../css/emitirHoleriteAdm.css" />
     <title>DevTech</title>
+
+    <!-- Importe a biblioteca jsPDF -->
+
+
+
+
+
+    <script src="../emitirHolerite.js" defer ></script>
+
   </head>
   <body>
     <div class="page">
@@ -30,37 +39,209 @@
       </nav>
 
       <main>
+         <div id="msgError"></div>
+        <div id="msgSucess"></div>
+
         <a href="./menuFunc.html"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
         <form>
-          <fieldset class="teste">
+          <fieldset>
             <legend>Emitir Holerite</legend>
-
             <div class="col-date">
               <div class="input-wrapper">
+                <img
+                  class="lupa"
+                  src="../assets/search.svg"
+                  alt=""
+                  onclick="performSearch()"
+                />
+
+                <label for="searchFunc">Funcionário</label>
+                <input
+                  type="search"
+                  name="searchFunc"
+                  id="searchFunc"
+                  placeholder="Busque o funcionário pelo nome ou id"
+                />
+              </div>
+
+              <div class="input-wrapper initial_dt">
                 <label for="initial_dt">Data Inicial</label>
                 <input type="date" id="initial_dt" placeholder="" />
               </div>
 
-              <div class="input-wrapper">
+              <div class="input-wrapper final_dt">
                 <label for="final_dt">Data Final</label>
                 <input type="date" id="final_dt" placeholder="" />
               </div>
             </div>
 
             <input
+            id="processHol"
               class="submit"
               type="submit"
-              value="Processar"
-              onclick="logar(); return false"
+              value="PROCESSAR"
+              onclick="processarHolerite()"
             />
           </fieldset>
         </form>
+
+        <form id="holerite" class="holerite">
+          <fieldset>
+            <legend>Holerite</legend>
+            <div class="col-hol">
+              <div class="input-wrapper-hol">
+                <label for="company">Nome da Empresa :</label>
+                <input type="text" id="company" />
+              </div>
+
+              <div class="input-wrapper-hol">
+                <label for="cnpj">CNPJ :</label>
+                <input type="text" id="cnpj" />
+              </div>
+            </div>
+
+            <div class="col-hol">
+              <div class="input-wrapper-hol">
+                <label for="address">Endereço :</label>
+                <input type="text" id="address" />
+              </div>
+
+              <div class="input-wrapper-hol city">
+                <label for="city">Cidade :</label>
+                <input type="text" id="city" />
+              </div>
+
+              <div class="input-wrapper-hol state">
+                <label for="state">Estado :</label>
+                <input type="text" id="state" />
+              </div>
+            </div>
+
+            <div class="input-wrapper-hol">
+              <label for="departmentFunc">Departamento :</label>
+              <input type="text" id="departmentFunc" />
+            </div>
+
+            <div class="col-hol">
+              <div class="input-wrapper-hol">
+                <label for="func">Nome Funcionário :</label>
+                <input type="text" id="func" />
+              </div>
+
+              <div class="input-wrapper-hol">
+                <label for="idFunc">id :</label>
+                <input type="text" id="idFunc" />
+              </div>
+            </div>
+
+            <div class="col-hol">
+              <div class="input-wrapper-hol">
+                <label for="initial">Data Inicial :</label>
+                <input type="date" id="initial" placeholder="" />
+              </div>
+
+              <div class="input-wrapper-hol">
+                <label for="final">Data Final :</label>
+                <input type="date" id="final" placeholder="" />
+              </div>
+
+              <div class="input-wrapper-hol">
+                <label for="emission">Data Emissão :</label>
+                <input type="date" id="emission" placeholder="" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="second">
+            <legend>Detalhes</legend>
+
+            <div class="col-hol">
+              <div class="p-wrapper">
+                <p class="firstP">Descrição</p>
+                <p>Vencimentos</p>
+                <p>Descontos</p>
+              </div>
+            </div>
+
+            <div class="dados">
+              <div class="input-wrapper-details">
+                <label for="baseSalary">Salário Base </label>
+                <input type="text" id="baseSalary" placeholder="R$ 00,00" />
+                <input type="text" placeholder="R$ 00,00" />
+              </div>
+
+              <div class="input-wrapper-details">
+                <label for="dayWorked">Dias Trabalhados </label>
+                <input type="text" id="dayWorked" placeholder="0" />
+                <input type="text" placeholder="0" />
+              </div>
+
+              <div class="input-wrapper-details">
+                <label for="workedHours">Dias Trabalhados </label>
+                <input type="text" id="workedHours" placeholder="0" />
+                <input type="text" placeholder="0" />
+              </div>
+
+
+              <div class="input-wrapper-details">
+                <label for="food">Vale Refeição </label>
+                <input type="text" id="food" placeholder="R$ 00,00" />
+                <input type="text" placeholder="R$ 00,00" />
+              </div>
+
+              <div class="input-wrapper-details">
+                <label for="transportation">Vale Transporte </label>
+                <input type="text" id="transportation" placeholder="R$ 00,00" />
+                <input type="text" placeholder="R$ 00,00" />
+              </div>
+
+              <div class="input-wrapper-details">
+                <label for="inss">INSS </label>
+                <input type="text" placeholder="R$ 00,00" />
+                <input type="text" id="inss" placeholder="R$ 00,00" />
+              </div>
+
+              <div class="input-wrapper-details">
+                <label for="fgts">FGTS </label>
+                <input type="text" placeholder="R$ 00,00" />
+                <input type="text" id="fgts" placeholder="R$ 00,00" />
+              </div>
+
+              <div class="input-wrapper-details">
+                <label for="irrf">IRRF </label>
+                <input type="text" placeholder="R$ 00,00" />
+                <input type="text" id="irrf" placeholder="R$ 00,00" />
+              </div>
+
+              <div class="input-wrapper-details liquido">
+                <label for="netSalary">Salário Liquido </label>
+                <input type="text" id="netSalary" placeholder="R$ 00,00" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="second teste">
+            <legend></legend>
+            <div>
+              <p class="numero">N:1</p>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+        
+          <button id="download" class="baixar">Baixar Holerite</button>
+      
       </main>
     </div>
     <footer></footer>
 
-    <script src="../javascript/consultarDepartamento.js"></script>
+    
+   
+
+
+
+    
+
   </body>
 </html>
