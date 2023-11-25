@@ -188,13 +188,27 @@ function processarHolerite() {
   })
 }
 
+// download.addEventListener("click", () => {
+//   const holerite = document.getElementById("holerite")
+
+//   const options = {
+//     margin: [10, 10, 10, 10],
+//     image: { type: "jpeg", quality: 0.98 },
+//     Filename: "arquivo.pdf",
+//     html2canvas: { scale: 2 },
+//     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+//   }
+
+//   html2pdf().set(options).from(holerite).save()
+// })
+
 download.addEventListener("click", () => {
   const holerite = document.getElementById("holerite").innerHTML
 
   let janela = window.open("", "", "width=1200, heigth=1200")
   janela.document.write("<html> <head>")
   janela.document.write("<title>DevTech </title> ")
-  janela.document.write("<link/> </head>")
+  janela.document.write("<link> </head>")
   janela.document.write("<body>")
   janela.document.write(holerite)
   janela.document.write("</body> </html>")
