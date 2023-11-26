@@ -16,12 +16,7 @@
 
     <!-- Importe a biblioteca jsPDF -->
 
-
-
-
-
-    <script src="../emitirHolerite.js" defer ></script>
-
+    <script src="../emitirHolerite.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -39,13 +34,12 @@
       </nav>
 
       <main>
-         <div id="msgError"></div>
-        <div id="msgSucess"></div>
-
         <a href="./menuFunc.html"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
         <form>
+          <div id="msgError"></div>
+          <div id="msgSucess"></div>
           <fieldset>
             <legend>Emitir Holerite</legend>
             <div class="col-date">
@@ -59,6 +53,7 @@
 
                 <label for="searchFunc">Funcionário</label>
                 <input
+                  class="search"
                   type="search"
                   name="searchFunc"
                   id="searchFunc"
@@ -66,19 +61,21 @@
                 />
               </div>
 
-              <div class="input-wrapper initial_dt">
-                <label for="initial_dt">Data Inicial</label>
-                <input type="date" id="initial_dt" placeholder="" />
-              </div>
+              <div class="col-teste">
+                <div class="input-wrapper initial_dt">
+                  <label for="initial_dt">Data Inicial</label>
+                  <input type="date" id="initial_dt" placeholder="" />
+                </div>
 
-              <div class="input-wrapper final_dt">
-                <label for="final_dt">Data Final</label>
-                <input type="date" id="final_dt" placeholder="" />
+                <div class="input-wrapper final_dt">
+                  <label for="final_dt">Data Final</label>
+                  <input type="date" id="final_dt" placeholder="" />
+                </div>
               </div>
             </div>
 
             <input
-            id="processHol"
+              id="processHol"
               class="submit"
               type="submit"
               value="PROCESSAR"
@@ -88,7 +85,7 @@
         </form>
 
         <form id="holerite" class="holerite">
-          <fieldset>
+          <fieldset class="teste">
             <legend>Holerite</legend>
             <div class="col-hol">
               <div class="input-wrapper-hol">
@@ -146,11 +143,10 @@
                 <label for="final">Data Final :</label>
                 <input type="date" id="final" placeholder="" />
               </div>
-
-              <div class="input-wrapper-hol">
-                <label for="emission">Data Emissão :</label>
-                <input type="date" id="emission" placeholder="" />
-              </div>
+            </div>
+            <div class="input-wrapper-hol">
+              <label for="emission">Data Emissão :</label>
+              <input type="date" id="emission" placeholder="" />
             </div>
           </fieldset>
           <fieldset class="second">
@@ -182,7 +178,6 @@
                 <input type="text" id="workedHours" placeholder="0" />
                 <input type="text" placeholder="0" />
               </div>
-
 
               <div class="input-wrapper-details">
                 <label for="food">Vale Refeição </label>
@@ -224,24 +219,13 @@
             <legend></legend>
             <div>
               <p class="numero">N:1</p>
-              </div>
             </div>
           </fieldset>
         </form>
 
-        
-          <button id="download" class="baixar">Baixar Holerite</button>
-      
+        <button id="download" class="baixar">Baixar Holerite</button>
       </main>
     </div>
     <footer></footer>
-
-    
-   
-
-
-
-    
-
   </body>
 </html>
