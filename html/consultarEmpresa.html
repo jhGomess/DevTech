@@ -29,13 +29,12 @@
         </div>
       </nav>
       <main>
-        <div id="msgError"></div>
-        <div id="msgSucess"></div>
-
-        <a href="./menu.html"
+        <a href="./menu.html" class="voltar"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
         <form>
+          <div id="msgError"></div>
+          <div id="msgSucess"></div>
           <fieldset>
             <legend>Consultar Empresa</legend>
 
@@ -44,7 +43,7 @@
                 id="consultCompany"
                 class="submit"
                 type="submit"
-                value="Consultar"
+                value="CONSULTAR"
                 onclick="consultarEmpresa()"
               />
             </div>
@@ -53,25 +52,26 @@
               <label id="labelCompany" for="company">Nome da Empresa</label>
               <input type="text" id="company" placeholder="Ex: UNIP" />
             </div>
-
-            <div class="input-wrapper">
-              <label id="labelCnpj" for="cnpj">CNPJ</label>
-              <input type="text" id="cnpj" placeholder="xx.xxx.xxx/0001-xx" />
-            </div>
-
-            <div class="col-2">
-              <div class="input-wrapper">
-                <label id="labelId" for="id">id</label>
-                <input type="number" id="id" placeholder="xxx" />
+            <div class="respo-col3">
+              <div class="input-wrapper cnpj">
+                <label id="labelCnpj" for="cnpj">CNPJ</label>
+                <input type="text" id="cnpj" placeholder="xx.xxx.xxx/0001-xx" />
               </div>
 
-              <div class="input-wrapper">
-                <label id="labelPhone" for="phone">Telefone</label>
-                <input
-                  type="number"
-                  id="phone"
-                  placeholder="(xx) x xxxx-xxxx"
-                />
+              <div class="col-2">
+                <div class="input-wrapper">
+                  <label id="labelId" for="id">id</label>
+                  <input type="number" id="id" placeholder="xxx" />
+                </div>
+
+                <div class="input-wrapper">
+                  <label id="labelPhone" for="phone">Telefone</label>
+                  <input
+                    type="number"
+                    id="phone"
+                    placeholder="(xx) x xxxx-xxxx"
+                  />
+                </div>
               </div>
             </div>
 
@@ -106,7 +106,7 @@
                 id="alterCompany"
                 class="yellow"
                 type="submit"
-                value="Alterar"
+                value="ALTERAR"
                 onclick="alterarEmpresa()"
               />
               <!-- <input class="yellow">Alterar/> -->
@@ -115,7 +115,7 @@
                 id="deleteCompany"
                 class="red"
                 type="submit"
-                value="Excluir"
+                value="EXCLUIR"
                 onclick="excluirEmpresa()"
               />
             </div>

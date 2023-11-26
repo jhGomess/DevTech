@@ -35,6 +35,8 @@ body {
   background-color: var(--bg-color);
 
   min-height: 100vh;
+  position: relative;
+  padding-bottom: 10rem;
 }
 
 body * {
@@ -172,6 +174,10 @@ form fieldset legend {
   width: 100%;
 }
 
+.cnpj {
+  margin-bottom: 2.4rem;
+}
+
 .col-2 {
   display: flex;
   align-items: center;
@@ -186,6 +192,7 @@ form .submit {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -230,6 +237,7 @@ form .submit:hover {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -251,6 +259,7 @@ form .submit:hover {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -267,6 +276,9 @@ footer {
   width: 100%;
   height: 10rem;
   background: var(--bg-nav);
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
 }
 
 #msgError {
@@ -291,4 +303,106 @@ footer {
 
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 800px) {
+  .page {
+    max-width: 140rem;
+    margin: 0px auto;
+    padding: 0rem 1.6rem;
+  }
+
+  form {
+    margin: 5rem auto 7rem;
+
+    max-width: 100rem;
+  }
+
+  .respo-col3 {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  form .submit {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .button-2 {
+    margin-top: 4rem;
+  }
+
+  .yellow,
+  .red {
+    width: 35%;
+    margin: 0 auto;
+  }
+
+  .cnpj {
+    margin-bottom: 0rem;
+  }
+
+  .voltar {
+    margin-left: 10rem;
+  }
+
+  #msgError {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
+
+  #msgSucess {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
+}
+
+@media (min-width: 1550px) {
+  .page {
+    max-width: 190rem;
+    margin: 0px auto;
+    padding: 0rem 1.6rem;
+  }
+
+  form {
+    margin: 5rem auto 7rem;
+
+    max-width: 140rem;
+  }
+
+  form .submit {
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .button-2 {
+    margin-top: 6rem;
+  }
+
+  .yellow,
+  .red {
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .voltar {
+    margin-left: 10rem;
+  }
+
+  #msgError {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
+
+  #msgSucess {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
 }
