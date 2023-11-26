@@ -57,6 +57,7 @@
         <form>
           <fieldset>
             <legend>Emitir Holerite</legend>
+
             <div class="col-date">
               <div class="input-wrapper">
                 <img
@@ -68,21 +69,23 @@
 
                 <label for="searchFunc">Funcionário</label>
                 <input
+                  class="search"
                   type="search"
                   name="searchFunc"
                   id="searchFunc"
                   placeholder="Busque o funcionário pelo nome ou id"
                 />
               </div>
+              <div class="col-teste">
+                <div class="input-wrapper initial_dt">
+                  <label for="initial_dt">Data Inicial</label>
+                  <input type="date" id="initial_dt" placeholder="" />
+                </div>
 
-              <div class="input-wrapper initial_dt">
-                <label for="initial_dt">Data Inicial</label>
-                <input type="date" id="initial_dt" placeholder="" />
-              </div>
-
-              <div class="input-wrapper final_dt">
-                <label for="final_dt">Data Final</label>
-                <input type="date" id="final_dt" placeholder="" />
+                <div class="input-wrapper final_dt">
+                  <label for="final_dt">Data Final</label>
+                  <input type="date" id="final_dt" placeholder="" />
+                </div>
               </div>
             </div>
 
@@ -97,7 +100,7 @@
         </form>
 
         <form id="holerite" class="holerite">
-          <fieldset>
+          <fieldset class="teste">
             <legend>Holerite</legend>
             <div class="col-hol">
               <div class="input-wrapper-hol">
@@ -155,11 +158,10 @@
                 <label for="final">Data Final :</label>
                 <input type="date" id="final" placeholder="" />
               </div>
-
-              <div class="input-wrapper-hol">
-                <label for="emission">Data Emissão :</label>
-                <input type="date" id="emission" placeholder="" />
-              </div>
+            </div>
+            <div class="input-wrapper-hol">
+              <label for="emission">Data Emissão :</label>
+              <input type="date" id="emission" placeholder="" />
             </div>
           </fieldset>
           <fieldset class="second">

@@ -53,15 +53,16 @@ body::before {
 }
 
 .page {
-  max-width: 110rem;
+  max-width: 100%;
   margin: 0px auto;
-  padding: 0rem 1.6rem;
+  padding: 0rem 3.2rem;
 }
 
 nav {
   color: white;
   height: 10rem;
-
+  max-width: 110rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -228,17 +229,23 @@ form fieldset legend {
   display: flex;
   gap: 3rem;
   align-items: center;
+  width: 100%;
 }
 
 .col-hol {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+}
+
+.respo-col3 {
+  display: flex;
+  justify-content: left;
+  gap: 3rem;
 }
 
 .initial_dt,
 .final_dt {
-  width: 50%;
+  width: 100%;
 }
 
 .city,
@@ -251,7 +258,7 @@ form fieldset legend {
   align-items: center;
   gap: 3.5rem;
 
-  width: 90%;
+  width: 88%;
   padding: 2rem;
 
   background-color: var(--bg-input);
@@ -265,7 +272,7 @@ form fieldset legend {
   align-items: center;
   gap: 1.4rem;
 
-  width: 100%;
+  width: 97%;
   padding: 2rem 1rem;
 
   background-color: var(--bg-input);
@@ -355,6 +362,7 @@ form .submit {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -371,7 +379,7 @@ form .submit {
   color: white;
   background-color: var(--bg-input);
 
-  margin: 2rem 0rem 20rem 100rem;
+  margin: 2rem 0rem 20rem;
 
   font-weight: 500;
 
@@ -413,9 +421,68 @@ footer {
   margin-bottom: 2rem;
 }
 
-@media (max-width: 374px) {
+@media (max-width: 425px) {
   .col-date {
     flex-direction: column;
-    max-width: 60%;
+  }
+
+  form .submit {
+    width: 70%;
+  }
+}
+
+@media (max-width: 850px) {
+  .initial,
+  .final,
+  .emission {
+    width: 30rem;
+  }
+
+  .respo-col3 {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1050px) {
+  nav {
+    color: white;
+    height: 10rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .p-wrapper {
+    width: 100%;
+  }
+
+  .baixar {
+    padding: 1.2rem 0rem;
+    width: 20rem;
+    border: none;
+    border-radius: 0.8rem;
+    color: white;
+    background-color: var(--bg-input);
+
+    margin: 2rem 0rem 20rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1150px) {
+  form.holerite {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .p-wrapper-2 {
+    width: 100%;
   }
 }

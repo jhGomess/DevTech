@@ -55,7 +55,7 @@ body::before {
 .page {
   max-width: 110rem;
   margin: 0px auto;
-  padding: 0rem 1.6rem;
+  padding: 0rem 3rem;
 }
 
 nav {
@@ -228,6 +228,15 @@ form fieldset legend {
   display: flex;
   gap: 3rem;
   align-items: center;
+  width: 100%;
+}
+
+.col-teste {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  width: 75%;
 }
 
 .col-hol {
@@ -257,6 +266,10 @@ form fieldset legend {
   border-radius: 0.8rem 0.8rem 0rem 0rem;
 
   margin: 0 auto;
+}
+
+.search {
+  width: 100%;
 }
 
 .p-wrapper p {
@@ -307,7 +320,6 @@ form fieldset legend {
 }
 
 .numero {
-  margin-left: 90rem;
   margin-top: -4rem;
 }
 
@@ -335,7 +347,7 @@ form .submit {
   color: white;
   background-color: var(--bg-input);
 
-  margin: 2rem 0rem 20rem 100rem;
+  margin: 2rem 0rem 20rem;
 
   font-weight: 500;
 
@@ -377,9 +389,60 @@ footer {
   margin-bottom: 2rem;
 }
 
-@media (max-width: 374px) {
+@media (max-width: 400px) {
   .col-date {
     flex-direction: column;
-    max-width: 60%;
+  }
+
+  .col-teste {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .initial_dt,
+  .final_dt {
+    width: 100%;
+  }
+
+  form .submit {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .col-date {
+    flex-direction: column;
+  }
+
+  .search {
+    width: 75%;
+  }
+
+  .col-teste {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    width: 75%;
+  }
+}
+
+@media (max-width: 900px) {
+  form.holerite {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .teste .input-wrapper-hol {
+    width: 27rem;
   }
 }
