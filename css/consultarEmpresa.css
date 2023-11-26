@@ -313,7 +313,7 @@ footer {
   .page {
     max-width: 140rem;
     margin: 0px auto;
-    padding: 0rem 1.6rem;
+    padding: 0rem 3rem;
   }
 
   form {
@@ -336,10 +336,11 @@ footer {
     width: 40%;
     margin: 0 auto;
     margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .button-2 {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
 
   .yellow,
@@ -350,10 +351,6 @@ footer {
 
   .cnpj {
     margin-bottom: 0rem;
-  }
-
-  .voltar {
-    margin-left: 10rem;
   }
 
   #msgError {
@@ -384,6 +381,7 @@ footer {
     width: 35%;
     margin: 0 auto;
     margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .button-2 {
@@ -394,10 +392,6 @@ footer {
   .red {
     width: 30%;
     margin: 0 auto;
-  }
-
-  .voltar {
-    margin-left: 10rem;
   }
 
   #msgError {

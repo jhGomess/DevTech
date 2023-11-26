@@ -195,6 +195,10 @@ form fieldset legend {
   padding: 0.8rem 1rem;
 }
 
+.search {
+  margin-bottom: 1.6rem;
+}
+
 .voltar {
   margin-left: 0rem;
 }
@@ -222,7 +226,7 @@ form .submit {
 
   transition: background-color 200ms;
 
-  margin: 0rem 0rem 3rem;
+  margin: 0rem 0rem 1rem;
 
   cursor: pointer;
 }
@@ -335,7 +339,7 @@ footer {
   .page {
     max-width: 140rem;
     margin: 0px auto;
-    padding: 0rem 1.6rem;
+    padding: 0rem 3rem;
   }
 
   form {
@@ -359,6 +363,10 @@ footer {
     margin: 0 auto;
   }
 
+  .search {
+    margin-bottom: 0rem;
+  }
+
   .id,
   .tel {
     width: 50%;
@@ -368,14 +376,10 @@ footer {
     margin-bottom: 0;
   }
 
-  .voltar {
-    margin-left: 10rem;
-  }
-
   .yellow,
   .red {
     width: 35%;
-    margin: 2rem auto 0rem;
+    margin: 4rem auto 0rem;
   }
 
   #msgError {
@@ -415,7 +419,7 @@ footer {
   .yellow,
   .red {
     width: 30%;
-    margin: 3rem auto 0;
+    margin: 4rem auto 0;
   }
 
   #msgError {

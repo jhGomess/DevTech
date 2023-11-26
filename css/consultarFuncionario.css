@@ -185,6 +185,19 @@ form fieldset legend {
   width: 100%;
 }
 
+.search {
+  margin-bottom: 2.4rem;
+}
+
+.func,
+.email,
+.depart,
+.cargo,
+.dias,
+.horas {
+  margin-bottom: 2.4rem;
+}
+
 .voltar {
   margin-left: 0rem;
 }
@@ -320,7 +333,7 @@ footer {
   .page {
     max-width: 140rem;
     margin: 0px auto;
-    padding: 0rem 1.6rem;
+    padding: 0rem 3rem;
   }
 
   form {
@@ -339,19 +352,28 @@ footer {
     width: 100%;
   }
 
+  .search {
+    margin-bottom: 0rem;
+  }
+
+  .func,
+  .email,
+  .depart,
+  .cargo,
+  .dias,
+  .horas {
+    margin-bottom: 0rem;
+  }
+
   .yellow,
   .red {
     width: 35%;
-    margin: 3rem auto 0;
+    margin: 4rem auto 0;
   }
 
   form .submit {
     width: 40%;
     margin: 0 auto;
-  }
-
-  .voltar {
-    margin-left: 10rem;
   }
 
   .cargo,
@@ -388,10 +410,23 @@ footer {
     margin: 0 auto;
   }
 
+  .search {
+    margin-bottom: 0rem;
+  }
+
   .yellow,
   .red {
     width: 30%;
-    margin: 3rem auto 0;
+    margin: 5rem auto 0;
+  }
+
+  .func,
+  .email,
+  .depart,
+  .cargo,
+  .dias,
+  .horas {
+    margin-bottom: 0rem;
   }
 
   .cargo,

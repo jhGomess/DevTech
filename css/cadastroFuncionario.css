@@ -186,6 +186,15 @@ form fieldset legend {
   width: 100%;
 }
 
+.func,
+.email,
+.depart,
+.cargo,
+.dias,
+.horas {
+  margin-bottom: 2.4rem;
+}
+
 .voltar {
   margin-left: 0rem;
 }
@@ -254,13 +263,22 @@ footer {
   .page {
     max-width: 140rem;
     margin: 0px auto;
-    padding: 0rem 1.6rem;
+    padding: 0rem 3rem;
   }
 
   form {
     margin: 5rem auto 7rem;
 
     max-width: 100rem;
+  }
+
+  .func,
+  .email,
+  .depart,
+  .cargo,
+  .dias,
+  .horas {
+    margin-bottom: 0rem;
   }
 
   .respo-col3 {
@@ -276,11 +294,7 @@ footer {
   form .submit {
     width: 40%;
     margin: 0 auto;
-    margin-top: 3rem;
-  }
-
-  .voltar {
-    margin-left: 10rem;
+    margin-top: 5rem;
   }
 
   .cargo,
@@ -315,7 +329,16 @@ footer {
   form .submit {
     width: 35%;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 6rem;
+  }
+
+  .func,
+  .email,
+  .depart,
+  .cargo,
+  .dias,
+  .horas {
+    margin-bottom: 0rem;
   }
 
   .cargo,

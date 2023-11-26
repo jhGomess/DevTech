@@ -253,7 +253,7 @@ footer {
   .page {
     max-width: 140rem;
     margin: 0px auto;
-    padding: 0rem 1.6rem;
+    padding: 0rem 3rem;
   }
 
   form {
@@ -275,7 +275,7 @@ footer {
   form .submit {
     width: 40%;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 
   .id,
@@ -285,10 +285,6 @@ footer {
 
   .cnpj {
     margin-bottom: 0;
-  }
-
-  .voltar {
-    margin-left: 10rem;
   }
 
   #msgError {
@@ -318,7 +314,7 @@ footer {
   form .submit {
     width: 35%;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
 
   .id,
