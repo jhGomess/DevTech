@@ -35,6 +35,8 @@ body {
   background-color: var(--bg-color);
 
   min-height: 100vh;
+  position: relative;
+  padding-bottom: 10rem;
 }
 
 body * {
@@ -187,6 +189,15 @@ form fieldset legend {
   padding: 0.8rem 1rem;
 }
 
+.voltar {
+  margin-left: 0rem;
+}
+
+.id,
+.tel {
+  width: 70%;
+}
+
 .col-2 {
   display: flex;
   gap: 2rem;
@@ -201,6 +212,7 @@ form .submit {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -245,6 +257,7 @@ form button {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -266,6 +279,7 @@ form button {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -282,6 +296,9 @@ footer {
   width: 100%;
   height: 10rem;
   background: var(--bg-nav);
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
 }
 
 #msgError {
@@ -306,4 +323,114 @@ footer {
 
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 800px) {
+  .page {
+    max-width: 140rem;
+    margin: 0px auto;
+    padding: 0rem 1.6rem;
+  }
+
+  form {
+    margin: 5rem auto 7rem;
+
+    max-width: 100rem;
+  }
+
+  .respo-col3 {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  form .submit {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+
+  .search {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .id,
+  .tel {
+    width: 50%;
+  }
+
+  .cnpj {
+    margin-bottom: 0;
+  }
+
+  .voltar {
+    margin-left: 10rem;
+  }
+
+  .yellow,
+  .red {
+    width: 35%;
+    margin: 2rem auto 0rem;
+  }
+
+  #msgError {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
+
+  #msgSucess {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
+}
+
+@media (min-width: 1550px) {
+  .page {
+    max-width: 190rem;
+    margin: 0px auto;
+    padding: 0rem 1.6rem;
+  }
+
+  form {
+    margin: 5rem auto 7rem;
+
+    max-width: 140rem;
+  }
+
+  form .submit {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+
+  .search {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .id,
+  .tel {
+    width: 50%;
+  }
+
+  .yellow,
+  .red {
+    width: 30%;
+    margin: 3rem auto 0;
+  }
+
+  #msgError {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
+
+  #msgSucess {
+    width: 50%;
+    margin: 0 auto 4rem;
+  }
 }

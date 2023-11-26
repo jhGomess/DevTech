@@ -173,6 +173,10 @@ form fieldset legend {
   width: 100%;
 }
 
+.voltar {
+  margin-left: 0rem;
+}
+
 .cnpj {
   margin-bottom: 2.4rem;
 }
@@ -272,6 +276,10 @@ footer {
     margin-bottom: 0;
   }
 
+  .voltar {
+    margin-left: 10rem;
+  }
+
   #msgError {
     width: 50%;
     margin: 0 auto 4rem;
@@ -300,6 +308,10 @@ footer {
     width: 35%;
     margin: 0 auto;
     margin-top: 4rem;
+  }
+
+  .voltar {
+    margin-left: 10rem;
   }
 
   #msgError {

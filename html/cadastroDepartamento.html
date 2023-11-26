@@ -29,42 +29,41 @@
         </div>
       </nav>
       <main>
-        <div id="msgError"></div>
-        <div id="msgSucess"></div>
-
-        <a href="./menu.html"
+        <a href="./menu.html" class="voltar"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
 
         <form>
+          <div id="msgError"></div>
+          <div id="msgSucess"></div>
           <fieldset>
             <legend>Cadastrar Departamento</legend>
-
-            <div class="input-wrapper">
-              <label id="labelDepartment" for="department"
-                >Nome do Departamento</label
-              >
-              <input type="text" id="department" placeholder="Ex: TI" />
-            </div>
-
-            <div class="input-wrapper">
-              <label id="labelResponsible" for="responsible"
-                >Nome do Responsável</label
-              >
-              <input
-                type="text"
-                id="responsible"
-                placeholder="Ex: Jhuan Gomes"
-              />
-            </div>
-
             <div class="col-2">
               <div class="input-wrapper">
+                <label id="labelDepartment" for="department"
+                  >Nome do Departamento</label
+                >
+                <input type="text" id="department" placeholder="Ex: TI" />
+              </div>
+
+              <div class="input-wrapper id">
                 <label id="labelIdDepartment" for="idDepartment">id</label>
                 <input type="number" id="idDepartment" placeholder="xxx" />
               </div>
-
+            </div>
+            <div class="col-2">
               <div class="input-wrapper">
+                <label id="labelResponsible" for="responsible"
+                  >Nome do Responsável</label
+                >
+                <input
+                  type="text"
+                  id="responsible"
+                  placeholder="Ex: Jhuan Gomes"
+                />
+              </div>
+
+              <div class="input-wrapper tel">
                 <label id="labelPhoneDepartment" for="phoneDepartment"
                   >Telefone</label
                 >
@@ -102,7 +101,7 @@
               id="createdDepartment"
               class="submit"
               type="submit"
-              value="Cadastrar"
+              value="CADASTRAR"
               onclick="cadastrarDepartamento()"
             />
           </fieldset>
