@@ -29,50 +29,48 @@
         </div>
       </nav>
       <main>
-
-        <div id="msgError"></div>
-        <div id="msgSucess"></div>
-
-        <a href="./menu.html"
+        <a href="./menu.html" class="voltar"
           ><img src="../assets/voltar.svg" alt="" /> Voltar</a
         >
         <form>
+          <div id="msgError"></div>
+          <div id="msgSucess"></div>
           <fieldset>
             <legend>Consultar Funcionário</legend>
-            <div class="input-wrapper">
-              <img
-                class="lupa"
-                src="../assets/search.svg"
-                alt=""
-                onclick="performSearch()"
-              />
+
+            <div class="respo-col3">
+              <div class="input-wrapper">
+                <img
+                  class="lupa"
+                  src="../assets/search.svg"
+                  alt=""
+                  onclick="performSearch()"
+                />
+
+                <input
+                  type="search"
+                  name="searchFunc"
+                  id="searchFunc"
+                  placeholder="Busque o funcionário pelo nome ou id"
+                />
+              </div>
 
               <input
-                type="search"
-                name="searchFunc"
-                id="searchFunc"
-                placeholder="Busque o funcionário pelo nome ou id"
+                id="consultFunc"
+                class="submit"
+                type="submit"
+                value="CONSULTAR"
+                onclick="consultarFunc()"
               />
             </div>
+          </fieldset>
+          <fieldset>
+            <legend>Dados Pessoais</legend>
 
-            <input
-              id="consultFunc"
-              class="submit"
-              type="submit"
-              value="Consultar"
-              onclick="consultarFunc()"
-            />
-
-            <fieldset>
-              <legend>Dados Pessoais</legend>
-
+            <div class="respo-col3">
               <div class="input-wrapper">
                 <label id="labelFunc" for="func">Nome do Funcionário</label>
-                <input
-                  type="text"
-                  id="func"
-                  placeholder="Ex: Jhuan Gomes"
-                />
+                <input type="text" id="func" placeholder="Ex: Jhuan Gomes" />
               </div>
               <div class="col-2">
                 <div class="input-wrapper">
@@ -89,7 +87,16 @@
                   />
                 </div>
               </div>
-
+            </div>
+            <div class="respo-col3">
+              <div class="input-wrapper">
+                <label id="labelEmailFunc" for="emailFunc">E-mail</label>
+                <input
+                  type="email"
+                  id="emailFunc"
+                  placeholder="exemplo@exemplo.com"
+                />
+              </div>
               <div class="col-2">
                 <div class="input-wrapper">
                   <label id="labelCpf" for="cpf">CPF</label>
@@ -101,52 +108,41 @@
                   <input type="text" id="rg" placeholder="xx.xxx.xxx-x" />
                 </div>
               </div>
+            </div>
+            <div class="input-wrapper">
+              <label id="labelAddressFunc" for="addressFunc">Endereço</label>
+              <input
+                type="text"
+                id="addressFunc"
+                placeholder="rua exemplo, 000"
+              />
+            </div>
+
+            <div class="col-2">
+              <div class="input-wrapper">
+                <label id="labelCityFunc" for="cityFunc">Cidade</label>
+                <input type="text" id="cityFunc" placeholder="Ex: São Paulo" />
+              </div>
 
               <div class="input-wrapper">
-                <label id="labelEmailFunc" for="emailFunc">E-mail</label>
-                <input
-                  type="email"
-                  id="emailFunc"
-                  placeholder="exemplo@exemplo.com"
-                />
+                <label id="labelStateFunc" for="stateFunc">Estado</label>
+                <input type="text" id="stateFunc" placeholder="Ex: SP" />
               </div>
-
-              <div class="input-wrapper">
-                <label id="labelAddressFunc" for="addressFunc">Endereço</label>
-                <input
-                  type="text"
-                  id="addressFunc"
-                  placeholder="rua exemplo, 000"
-                />
-              </div>
-
-              <div class="col-2">
-                <div class="input-wrapper">
-                  <label id="labelCityFunc" for="cityFunc">Cidade</label>
-                  <input type="text" id="cityFunc" placeholder="Ex: São Paulo" />
-                </div>
-
-                <div class="input-wrapper">
-                  <label id="labelStateFunc" for="stateFunc">Estado</label>
-                  <input type="text" id="stateFunc" placeholder="Ex: SP" />
-                </div>
-              </div>
-            
+            </div>
           </fieldset>
 
           <fieldset>
-              <legend>Dados Profissionais</legend>
+            <legend>Dados Profissionais</legend>
 
-              <div class="input-wrapper">
-                <label id="labelDepartmentFunc" for="departmentFunc">Departamento</label>
-                <input
-                  type="text"
-                  id="departmentFunc"
-                  placeholder="Ex: TI"
-                />
+            <div class="respo-col3">
+              <div class="input-wrapper depart">
+                <label id="labelDepartmentFunc" for="departmentFunc"
+                  >Departamento</label
+                >
+                <input type="text" id="departmentFunc" placeholder="Ex: TI" />
               </div>
 
-              <div class="input-wrapper">
+              <div class="input-wrapper cargo">
                 <label id="labelOffice" for="office">Cargo</label>
                 <input
                   type="text"
@@ -157,7 +153,9 @@
 
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label id="labelBaseSalary" for="baseSalary">Salário Base</label>
+                  <label id="labelBaseSalary" for="baseSalary"
+                    >Salário Base</label
+                  >
                   <input type="text" id="baseSalary" placeholder="R$ 00,00" />
                 </div>
 
@@ -166,26 +164,29 @@
                   <input type="date" id="date_Ad" placeholder="" />
                 </div>
               </div>
-
+            </div>
+            <div class="respo-col3">
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label id="labelDayWorked" for="dayWorked">Dias Trabalhados</label>
-                  <input
-                    type="text"
-                    id="dayWorked"
-                    placeholder="Ex: 30 dias"
-                  />
+                  <label id="labelDayWorked" for="dayWorked"
+                    >Dias Trabalhados</label
+                  >
+                  <input type="text" id="dayWorked" placeholder="Ex: 30 dias" />
                 </div>
 
                 <div class="input-wrapper">
-                  <label id="labelWorkedHours" for="workedHours">Horas por dia</label>
+                  <label id="labelWorkedHours" for="workedHours"
+                    >Horas por dia</label
+                  >
 
                   <input type="text" id="workedHours" />
                 </div>
               </div>
               <div class="col-2">
                 <div class="input-wrapper">
-                  <label id="labelTransportation" for="transportation">Vale Transporte</label>
+                  <label id="labelTransportation" for="transportation"
+                    >Vale Transporte</label
+                  >
                   <input
                     type="text"
                     id="transportation"
@@ -198,19 +199,14 @@
                   <input type="text" id="food" placeholder="R$ 00,00" />
                 </div>
               </div>
+            </div>
 
-              <div class="input-wrapper">
-                <label id="labelHealth" for="health">Plano de Saúde</label>
-                <input type="text" id="health" placeholder="R$ 00,00" />
-              </div>
-              
-
-              <div class="button-2">
+            <div class="button-2">
               <input
                 id="alterFunc"
                 class="yellow"
                 type="submit"
-                value="Alterar"
+                value="ALTERAR"
                 onclick="alterarFunc()"
               />
               <!-- <input class="yellow">Alterar/> -->
@@ -219,7 +215,7 @@
                 id="deleteFunc"
                 class="red"
                 type="submit"
-                value="Excluir"
+                value="EXCLUIR"
                 onclick="excluirFunc()"
               />
             </div>

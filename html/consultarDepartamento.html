@@ -37,29 +37,32 @@
           <div id="msgSucess"></div>
           <fieldset>
             <legend>Consultar Departamento</legend>
-            <div class="input-wrapper search">
-              <img
-                class="lupa"
-                src="../assets/search.svg"
-                alt=""
-                onclick="performSearch()"
-              />
+
+            <div class="respo-col3">
+              <div class="input-wrapper search">
+                <img
+                  class="lupa"
+                  src="../assets/search.svg"
+                  alt=""
+                  onclick="performSearch()"
+                />
+
+                <input
+                  type="search"
+                  name="searchDepartment"
+                  id="searchDepartment"
+                  placeholder="Busque o departamento pelo nome ou id"
+                />
+              </div>
 
               <input
-                type="search"
-                name="searchDepartment"
-                id="searchDepartment"
-                placeholder="Busque o departamento pelo nome ou id"
+                id="consultDepartment"
+                class="submit"
+                type="submit"
+                value="CONSULTAR"
+                onclick="consultarDepartamento()"
               />
             </div>
-
-            <input
-              id="consultDepartment"
-              class="submit"
-              type="submit"
-              value="CONSULTAR"
-              onclick="consultarDepartamento()"
-            />
             <div class="col-2">
               <div class="input-wrapper">
                 <label id="labelDepartment" for="department"
