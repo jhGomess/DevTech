@@ -187,6 +187,14 @@ form fieldset legend {
 
   width: 100%;
 }
+.search,
+.func,
+.id,
+.base,
+.inss,
+.fgts {
+  margin-bottom: 2.4rem;
+}
 
 .col-2,
 .col-date {
@@ -203,6 +211,7 @@ form .submit {
   border-radius: 0.8rem;
 
   color: white;
+  font-weight: 700;
 
   transition: background-color 200ms;
 
@@ -310,5 +319,159 @@ footer {
   .col-date {
     flex-direction: column;
     max-width: 60%;
+  }
+}
+
+@media (min-width: 800px) {
+  .page {
+    max-width: 140rem;
+    margin: 0px auto;
+    padding: 0rem 3rem;
+  }
+
+  form {
+    margin: 5rem auto 0rem;
+
+    max-width: 100rem;
+  }
+
+  .border {
+    border: 1px solid var(--text-color);
+    padding: 3.2rem 3.2rem 4rem;
+  }
+
+  .encerrarFolha {
+    display: block;
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+
+  .respo-col3 {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .margin {
+    margin-bottom: 3rem;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  .inss,
+  .fgts {
+    width: 100%;
+  }
+
+  .irrf {
+    width: 50%;
+  }
+
+  .lupa {
+    position: absolute;
+    right: 1.6rem;
+    top: 50%;
+
+    cursor: pointer;
+  }
+
+  .search {
+    margin-top: 2.8rem;
+  }
+
+  .search,
+  .func,
+  .id,
+  .base,
+  .inss,
+  .fgts {
+    margin-bottom: 0rem;
+  }
+
+  .yellow,
+  .red {
+    width: 35%;
+    margin: 4rem auto 0;
+  }
+
+  form .submit {
+    width: 40%;
+    margin: 2.8rem auto 0rem;
+  }
+
+  .cargo,
+  .depart {
+    width: 50%;
+  }
+
+  #msgError {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  #msgSucess {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1550px) {
+  .page {
+    max-width: 190rem;
+    margin: 0px auto;
+    padding: 0rem 1.6rem;
+  }
+
+  form {
+    margin: 5rem auto 0rem;
+
+    max-width: 140rem;
+  }
+
+  form .submit {
+    width: 35%;
+    margin: 2.8rem auto 0rem;
+  }
+
+  .encerrarFolha {
+    display: block;
+    max-width: 140rem;
+    margin: 0 auto;
+  }
+
+  .search {
+    margin-bottom: 0rem;
+  }
+
+  .yellow,
+  .red {
+    width: 30%;
+    margin: 5rem auto 0;
+  }
+
+  .search,
+  .func,
+  .id,
+  .base,
+  .inss,
+  .fgts {
+    margin-bottom: 0rem;
+  }
+
+  .cargo,
+  .depart {
+    width: 50%;
+  }
+
+  #msgError {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  #msgSucess {
+    width: 50%;
+    margin: 0 auto;
   }
 }
