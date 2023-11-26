@@ -132,6 +132,12 @@ form {
   max-width: 42.5rem;
 }
 
+.first {
+  border-bottom: 1px solid var(--select-color);
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+}
+
 form fieldset {
   border: none;
   color: var(--text-color);
