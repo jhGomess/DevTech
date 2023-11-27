@@ -89,7 +89,6 @@ function processarFolha() {
       workedHours.value = funcConsultado.workedHoursCad * dayWorked.value
       transportation.value = "R$ " + funcConsultado.transportationCad
       food.value = "R$ " + funcConsultado.foodCad
-      health.value = funcConsultado.healthCad
 
       const baseSalaryValue = parseFloat(
         funcConsultado.baseSalaryCad.replace("R$ ", "")

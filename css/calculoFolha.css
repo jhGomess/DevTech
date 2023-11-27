@@ -409,11 +409,15 @@ footer {
   #msgError {
     width: 50%;
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   #msgSucess {
     width: 50%;
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -468,10 +472,14 @@ footer {
   #msgError {
     width: 50%;
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   #msgSucess {
     width: 50%;
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }

@@ -317,20 +317,6 @@ food.addEventListener("keyup", () => {
   }
 })
 
-health.addEventListener("keyup", () => {
-  if (health.value.length < 1) {
-    labelHealth.setAttribute("style", "color: red")
-    labelHealth.innerHTML = "Plano de Saúde *Insira o plano de saúde"
-    health.setAttribute("style", "outline:1px solid red")
-    validHealth = false
-  } else {
-    labelHealth.setAttribute("style", "color: #c4c4cc")
-    labelHealth.innerHTML = "Plano de Saúde"
-    health.setAttribute("style", "outline-color: 1px solid white")
-    validHealth = true
-  }
-})
-
 function cadastrarFunc() {
   if (
     validFunc &&
@@ -349,8 +335,7 @@ function cadastrarFunc() {
     validDayWorked &&
     validWorkedHours &&
     validTransportation &&
-    validFood &&
-    validHealth
+    validFood
   ) {
     //implementando o localStorage se o cadastro foi sucesso, cadastro correto
 
@@ -374,7 +359,6 @@ function cadastrarFunc() {
       workedHoursCad: workedHours.value,
       transportationCad: transportation.value,
       foodCad: food.value,
-      healthCad: health.value,
     }
 
     listaFunc.push(newListaFunc)
@@ -455,7 +439,6 @@ function consultarFunc() {
       workedHours.value = funcConsultado.workedHoursCad
       transportation.value = funcConsultado.transportationCad
       food.value = funcConsultado.foodCad
-      health.value = funcConsultado.healthCad
 
       msgSucess.setAttribute("style", "display: block")
       msgSucess.innerHTML = "<strong>Consultando Funcionário...</strong>"
@@ -552,7 +535,6 @@ function alterarFunc() {
     funcEdit[indexFunc].workedHoursCad = workedHours.value
     funcEdit[indexFunc].transportationCad = transportation.value
     funcEdit[indexFunc].foodCad = food.value
-    funcEdit[indexFunc].healthCad = health.value
 
     localStorage.setItem("listaFunc", JSON.stringify(funcEdit))
 
