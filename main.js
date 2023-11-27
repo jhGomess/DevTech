@@ -6,6 +6,7 @@ function logar() {
 
   let msgError = document.getElementById("msgError")
   let msgSucess = document.getElementById("msgSucess")
+
   let listaUser = []
 
   let userValid = {
